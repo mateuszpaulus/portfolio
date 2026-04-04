@@ -6,6 +6,7 @@ import { Zap } from 'lucide-react'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { TechTag } from '@/components/common/TechTag'
 import { useInView } from '@/hooks/useInView'
+import { StatsRow } from '@/components/sections/StatsRow'
 
 const TECH_STACK = [
   'Next.js', 'React', 'TypeScript',
@@ -78,7 +79,10 @@ export default function About() {
   return (
     <section id="about" ref={ref} className="py-24">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <SectionHeading title={t('heading')} />
+        <SectionHeading title={t('heading')} scramble />
+        <div className="mb-16">
+          <StatsRow />
+        </div>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <BioColumn
             bio={t('bio')}

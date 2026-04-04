@@ -6,6 +6,8 @@ import { useTranslations } from 'next-intl'
 import { ArrowDown } from 'lucide-react'
 import { staggerContainer, fadeInUp } from '@/lib/utils/animations'
 import { TypingEffect } from '@/components/common/TypingEffect'
+import { TextScramble } from '@/components/common/TextScramble'
+import MagneticButton from '@/components/common/MagneticButton'
 
 const ThreeExperiment = dynamic(
   () => import('@/features/experiments/ThreeExperiment'),
@@ -57,7 +59,7 @@ export default function Hero() {
       {/* Three.js globe — background on mobile/tablet, interactive on desktop */}
       <ThreeExperiment />
 
-      {/* Content — always on top */}
+      {/* Content */}
       <div className="relative z-10 mx-auto flex w-full max-w-[1200px] items-center px-4 py-24 sm:px-6 lg:py-0">
         <div className="grid w-full lg:grid-cols-2 lg:gap-16">
           <motion.div
@@ -78,7 +80,7 @@ export default function Hero() {
               variants={heroItem}
               className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
             >
-              {t('title')}
+              <TextScramble text={t('title')} trigger="mount" speed={25} />
             </motion.h1>
 
             <motion.div variants={heroItem} className="mt-3 h-8 text-lg font-medium">
@@ -93,24 +95,27 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={heroItem} className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-hover)]"
-              >
-                {t('cta_projects')}
-                <ArrowDown size={16} />
-              </a>
-              <a
-                href="/cv.pdf"
-                download
-                className="inline-flex items-center rounded-lg border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-[var(--brand)] hover:text-[var(--brand)]"
-              >
-                {t('cta_cv')}
-              </a>
+              <MagneticButton>
+                <a
+                  href="#projects"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-hover)]"
+                >
+                  {t('cta_projects')}
+                  <ArrowDown size={16} />
+                </a>
+              </MagneticButton>
+              <MagneticButton>
+                <a
+                  href="/cv.pdf"
+                  download
+                  className="inline-flex items-center rounded-lg border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-[var(--brand)] hover:text-[var(--brand)]"
+                >
+                  {t('cta_cv')}
+                </a>
+              </MagneticButton>
             </motion.div>
           </motion.div>
 
-          {/* Right column — desktop layout balance */}
           <div className="hidden lg:block" aria-hidden="true" />
         </div>
       </div>

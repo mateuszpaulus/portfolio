@@ -5,6 +5,7 @@ import Projects from '@/components/sections/Projects'
 import TechDecisions from '@/components/sections/TechDecisions'
 import Performance from '@/components/sections/Performance'
 import Contact from '@/components/sections/Contact'
+import EasterEggController from '@/components/common/EasterEggController'
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <TechDecisions />
       <Performance />
       <Contact />
+      <EasterEggController />
     </>
   )
 }

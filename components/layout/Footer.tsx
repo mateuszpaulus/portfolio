@@ -36,7 +36,7 @@ export function Footer() {
             <GithubIcon />
           </a>
           <a
-            href="https://linkedin.com/in/mateuszpaulus"
+            href="https://linkedin.com/in/mateusz-paulus"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

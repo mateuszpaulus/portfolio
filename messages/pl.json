@@ -38,6 +38,12 @@
     "close": "Zamknij",
     "more_stack": "więcej"
   },
+  "stats": {
+    "experience": "lata doświadczenia",
+    "projects": "projektów ukończonych",
+    "lighthouse": "Lighthouse score",
+    "coffee": "kawa przed kodem"
+  },
   "skills": {
     "heading": "Umiejętności",
     "subtitle": "Technologie z którymi pracuję"
@@ -89,5 +95,18 @@
     "title": "Coś poszło nie tak",
     "subtitle": "Wystąpił nieoczekiwany błąd.",
     "retry": "Spróbuj ponownie"
+  },
+  "easterEgg": {
+    "hint_heading": "Chcesz zostać tu dłużej?",
+    "hint_desktop": "Spróbuj wykonać tę sekwencję na klawiaturze...",
+    "hint_mobile": "Kliknij sekwencję poniżej w odpowiedniej kolejności...",
+    "sequence_label": "Sekwencja:",
+    "start": "— zacznij sekwencję —",
+    "progress": "{current} / {total} — kontynuuj...",
+    "wrong": "Błąd! Zacznij od nowa...",
+    "achievement": "Achievement Unlocked!",
+    "found": "Znalazłeś easter egga. Skoro tu jesteś — może pogadamy?",
+    "cta": "Napisz do mnie →",
+    "close": "Zamknij"
   }
 }

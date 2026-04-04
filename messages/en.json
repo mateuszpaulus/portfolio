@@ -38,6 +38,12 @@
     "close": "Close",
     "more_stack": "more"
   },
+  "stats": {
+    "experience": "years of experience",
+    "projects": "projects completed",
+    "lighthouse": "Lighthouse score",
+    "coffee": "coffee before code"
+  },
   "skills": {
     "heading": "Skills",
     "subtitle": "Technologies I work with"
@@ -89,5 +95,18 @@
     "title": "Something went wrong",
     "subtitle": "An unexpected error occurred.",
     "retry": "Try again"
+  },
+  "easterEgg": {
+    "hint_heading": "Want to stay a little longer?",
+    "hint_desktop": "Try entering this sequence on your keyboard...",
+    "hint_mobile": "Tap the sequence below in the right order...",
+    "sequence_label": "Sequence:",
+    "start": "— start the sequence —",
+    "progress": "{current} / {total} — keep going...",
+    "wrong": "Wrong! Start over...",
+    "achievement": "Achievement Unlocked!",
+    "found": "You found the easter egg. Since you're here — let's talk?",
+    "cta": "Contact me →",
+    "close": "Close"
   }
 }

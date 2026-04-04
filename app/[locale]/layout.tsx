@@ -10,6 +10,7 @@ import ServiceWorkerRegistration from '@/components/common/ServiceWorkerRegistra
 import ScrollProgress from '@/components/common/ScrollProgress'
 import BackToTop from '@/components/common/BackToTop'
 import CursorSpotlight from '@/components/common/CursorSpotlight'
+import CustomCursor from '@/components/common/CustomCursor'
 import '../globals.css'
 
 const geistSans = Geist({
@@ -74,6 +75,7 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased">
+        <CustomCursor />
         <CursorSpotlight />
         <ScrollProgress />
         <ThemeScript />
