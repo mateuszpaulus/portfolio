@@ -10,7 +10,13 @@
     "title": "Mateusz Paulus",
     "subtitle": "Buduję szybkie i skalowalne aplikacje webowe z naciskiem na wydajność i czystą architekturę.",
     "cta_projects": "Zobacz projekty",
-    "cta_cv": "Pobierz CV"
+    "cta_cv": "Pobierz CV",
+    "typing_words": [
+      "Next.js Developer",
+      "TypeScript Enthusiast",
+      "Obsesja na punkcie wydajności",
+      "Czysty kod ponad wszystko"
+    ]
   },
   "about": {
     "heading": "O mnie",
@@ -31,6 +37,10 @@
     "live_demo": "Live Demo",
     "close": "Zamknij",
     "more_stack": "więcej"
+  },
+  "skills": {
+    "heading": "Umiejętności",
+    "subtitle": "Technologie z którymi pracuję"
   },
   "techDecisions": {
     "heading": "Dlaczego tak buduję",

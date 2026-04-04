@@ -10,7 +10,13 @@
     "title": "Mateusz Paulus",
     "subtitle": "I build fast, scalable web applications with focus on performance and clean architecture.",
     "cta_projects": "View projects",
-    "cta_cv": "Download CV"
+    "cta_cv": "Download CV",
+    "typing_words": [
+      "Next.js Developer",
+      "TypeScript Enthusiast",
+      "Performance Obsessed",
+      "Clean Code Advocate"
+    ]
   },
   "about": {
     "heading": "About me",
@@ -31,6 +37,10 @@
     "live_demo": "Live Demo",
     "close": "Close",
     "more_stack": "more"
+  },
+  "skills": {
+    "heading": "Skills",
+    "subtitle": "Technologies I work with"
   },
   "techDecisions": {
     "heading": "Why I build this way",

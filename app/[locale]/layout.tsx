@@ -7,6 +7,9 @@ import { ThemeScript } from '@/components/layout/ThemeScript'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import ServiceWorkerRegistration from '@/components/common/ServiceWorkerRegistration'
+import ScrollProgress from '@/components/common/ScrollProgress'
+import BackToTop from '@/components/common/BackToTop'
+import CursorSpotlight from '@/components/common/CursorSpotlight'
 import '../globals.css'
 
 const geistSans = Geist({
@@ -71,6 +74,8 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased">
+        <CursorSpotlight />
+        <ScrollProgress />
         <ThemeScript />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
@@ -79,6 +84,7 @@ export default async function LocaleLayout({
             <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
+        <BackToTop />
         <ServiceWorkerRegistration />
       </body>
     </html>
