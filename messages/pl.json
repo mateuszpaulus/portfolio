@@ -22,5 +22,17 @@
   "notFound": {
     "title": "Strona nie istnieje",
     "back": "Wróć do strony głównej"
+  },
+  "projects": {
+    "heading": "Projekty",
+    "subtitle": "Rzeczy, które zbudowałem — kliknij kartę, aby dowiedzieć się więcej.",
+    "inProgress": "W trakcie",
+    "viewCode": "Kod źródłowy",
+    "viewLive": "Podgląd",
+    "close": "Zamknij"
+  },
+  "techDecisions": {
+    "heading": "Decyzje techniczne",
+    "subtitle": "Dlaczego wybrałem te narzędzia i jakie problemy rozwiązują."
   }
 }

@@ -22,5 +22,17 @@
   "notFound": {
     "title": "Page not found",
     "back": "Back to home"
+  },
+  "projects": {
+    "heading": "Projects",
+    "subtitle": "Things I've built — click a card to learn more.",
+    "inProgress": "In progress",
+    "viewCode": "View code",
+    "viewLive": "Live site",
+    "close": "Close"
+  },
+  "techDecisions": {
+    "heading": "Tech Decisions",
+    "subtitle": "Why I picked these tools and what problems they solve."
   }
 }

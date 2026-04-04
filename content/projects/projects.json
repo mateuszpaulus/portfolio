@@ -1,0 +1,22 @@
+[
+  {
+    "id": "portfolio",
+    "title": "Developer Portfolio",
+    "description": "This portfolio — built with Next.js 16 App Router, Tailwind v4, and Framer Motion. Multilingual (pl/en), dark mode, 95+ Lighthouse score.",
+    "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "next-intl"],
+    "githubUrl": "https://github.com/mateuszpaulus/portfolio",
+    "liveUrl": null,
+    "imageUrl": null,
+    "inProgress": false
+  },
+  {
+    "id": "starter",
+    "title": "Starter Kit",
+    "description": "Something big is on the way. Full-stack application with auth and management.",
+    "stack": ["Next.js", "TypeScript", "PostgreSQL", "Java", "Stripe"],
+    "githubUrl": null,
+    "liveUrl": null,
+    "imageUrl": null,
+    "inProgress": true
+  }
+]
