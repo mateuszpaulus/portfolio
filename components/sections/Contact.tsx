@@ -36,11 +36,11 @@ function ContactInfo() {
       </p>
       <div className="flex flex-col gap-4">
         <a
-          href="mailto:contact@mateuszpaulus.dev"
+          href="mailto:paulus.m.mateusz@gmail.com"
           className="flex items-center gap-3 text-sm text-[var(--foreground-secondary)] transition-colors hover:text-[var(--brand)]"
         >
           <Mail size={18} className="shrink-0" />
-          contact@mateuszpaulus.dev
+          paulus.m.mateusz@gmail.com
         </a>
         <a
           href="https://github.com/mateuszpaulus"
@@ -52,13 +52,13 @@ function ContactInfo() {
           github.com/mateuszpaulus
         </a>
         <a
-          href="https://linkedin.com/in/mateuszpaulus"
+          href="https://linkedin.com/in/mateusz-paulus"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 text-sm text-[var(--foreground-secondary)] transition-colors hover:text-[var(--brand)]"
         >
           <LinkedinIcon />
-          linkedin.com/in/mateuszpaulus
+          linkedin.com/in/mateusz-paulus
         </a>
       </div>
     </div>

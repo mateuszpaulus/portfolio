@@ -47,21 +47,19 @@ export default function Hero() {
         }}
       />
 
-      {/* Gradient orbs — CSS only */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-0 top-1/2 hidden h-[600px] w-[600px] -translate-y-1/2 translate-x-1/3 rounded-full blur-3xl lg:block"
-        style={{ background: 'var(--brand)', opacity: 0.08 }}
-      />
+      {/* Subtle brand orb */}
       <div
         aria-hidden
         className="pointer-events-none absolute -left-40 bottom-1/4 h-[400px] w-[400px] rounded-full blur-3xl"
         style={{ background: 'var(--brand)', opacity: 0.06 }}
       />
 
+      {/* Three.js globe — background on mobile/tablet, interactive on desktop */}
+      <ThreeExperiment />
+
+      {/* Content — always on top */}
       <div className="relative z-10 mx-auto flex w-full max-w-[1200px] items-center px-4 py-24 sm:px-6 lg:py-0">
         <div className="grid w-full lg:grid-cols-2 lg:gap-16">
-          {/* Left — content */}
           <motion.div
             variants={heroContainer}
             initial="hidden"
@@ -70,8 +68,9 @@ export default function Hero() {
           >
             <motion.span
               variants={heroItem}
-              className="mb-4 inline-flex items-center rounded-full border border-[var(--brand)]/30 bg-[var(--brand)]/8 px-3 py-1 text-sm font-medium text-[var(--brand)]"
+              className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--brand)]/30 bg-[var(--brand)]/8 px-3 py-1 text-sm font-medium text-[var(--brand)]"
             >
+              <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--brand)]" aria-hidden="true" />
               {t('badge')}
             </motion.span>
 
@@ -82,7 +81,7 @@ export default function Hero() {
               {t('title')}
             </motion.h1>
 
-            <motion.div variants={heroItem} className="mt-3 h-7 text-lg font-medium">
+            <motion.div variants={heroItem} className="mt-3 h-8 text-lg font-medium">
               <TypingEffect words={t.raw('typing_words') as string[]} />
             </motion.div>
 
@@ -111,13 +110,10 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right — placeholder for desktop layout balance */}
+          {/* Right column — desktop layout balance */}
           <div className="hidden lg:block" aria-hidden="true" />
         </div>
       </div>
-
-      {/* Three.js sphere — lazy, desktop only, non-blocking */}
-      <ThreeExperiment />
     </section>
   )
 }

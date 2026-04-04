@@ -4,21 +4,25 @@ import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three-stdlib'
 
-export default function ThreeSphere() {
+interface ThreeSphereProps {
+  interactive?: boolean
+}
+
+export default function ThreeSphere({ interactive = true }: ThreeSphereProps) {
   const mountRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!mountRef.current) return
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const size = interactive ? 400 : 500
 
-    // Scene
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000)
     camera.position.z = 5
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
-    renderer.setSize(400, 400)
+    renderer.setSize(size, size)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setClearColor(0x000000, 0)
     mountRef.current.appendChild(renderer.domElement)
@@ -34,7 +38,7 @@ export default function ThreeSphere() {
     const outerSphere = new THREE.Mesh(outerGeometry, outerMaterial)
     scene.add(outerSphere)
 
-    // Inner solid sphere (very transparent)
+    // Inner solid sphere
     const innerGeometry = new THREE.SphereGeometry(1.5, 16, 16)
     const innerMaterial = new THREE.MeshBasicMaterial({
       color: 0x6366f1,
@@ -82,32 +86,25 @@ export default function ThreeSphere() {
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enableDamping = true
     controls.dampingFactor = 0.05
-    controls.enableZoom = true
-    controls.minDistance = 3
-    controls.maxDistance = 8
+    controls.enableZoom = interactive
+    controls.enableRotate = interactive
     controls.enablePan = false
     controls.autoRotate = !prefersReduced
-    controls.autoRotateSpeed = 0.5
+    controls.autoRotateSpeed = interactive ? 0.5 : 1.2
 
     let idleTimer: ReturnType<typeof setTimeout>
 
-    function onInteractionStart() {
-      controls.autoRotate = false
+    if (interactive) {
+      function onStart() { controls.autoRotate = false }
+      function onEnd() {
+        clearTimeout(idleTimer)
+        idleTimer = setTimeout(() => { controls.autoRotate = true }, 3000)
+      }
+      controls.addEventListener('start', onStart)
+      controls.addEventListener('end', onEnd)
     }
 
-    function onInteractionEnd() {
-      clearTimeout(idleTimer)
-      idleTimer = setTimeout(() => {
-        if (!prefersReduced) controls.autoRotate = true
-      }, 3000)
-    }
-
-    controls.addEventListener('start', onInteractionStart)
-    controls.addEventListener('end', onInteractionEnd)
-
-    // Animation
     let animationId: number
-
     function animate() {
       animationId = requestAnimationFrame(animate)
       if (!prefersReduced) {
@@ -117,7 +114,6 @@ export default function ThreeSphere() {
       controls.update()
       renderer.render(scene, camera)
     }
-
     animate()
 
     const mount = mountRef.current
@@ -125,8 +121,6 @@ export default function ThreeSphere() {
     return () => {
       cancelAnimationFrame(animationId)
       clearTimeout(idleTimer)
-      controls.removeEventListener('start', onInteractionStart)
-      controls.removeEventListener('end', onInteractionEnd)
       controls.dispose()
       outerGeometry.dispose()
       outerMaterial.dispose()
@@ -139,12 +133,14 @@ export default function ThreeSphere() {
       renderer.dispose()
       mount?.removeChild(renderer.domElement)
     }
-  }, [])
+  }, [interactive])
+
+  const size = interactive ? 400 : 500
 
   return (
     <div
       ref={mountRef}
-      style={{ width: 400, height: 400 }}
+      style={{ width: size, height: size }}
       aria-hidden="true"
     />
   )
