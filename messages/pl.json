@@ -4,9 +4,17 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "role": "Fullstack Developer",
+    "badge": "Fullstack Developer",
+    "title": "Mateusz Paulus",
+    "subtitle": "Buduję szybkie i skalowalne aplikacje webowe z naciskiem na wydajność i czystą architekturę.",
     "cta_projects": "Zobacz projekty",
     "cta_cv": "Pobierz CV"
+  },
+  "about": {
+    "heading": "O mnie",
+    "bio": "Jestem fullstack developerem z pasją do budowania szybkich i skalowalnych aplikacji webowych. Skupiam się na czystej architekturze i doświadczeniu użytkownika. Lubię rozwiązywać złożone problemy prostymi rozwiązaniami.",
+    "current_focus_label": "Aktualnie",
+    "current_focus": "Next.js 15, TypeScript, system design"
   },
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone"

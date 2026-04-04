@@ -8,11 +8,48 @@ import { Link } from '@/lib/i18n/navigation'
 import { ThemeToggle } from '@/components/common/ThemeToggle'
 import { LanguageSwitch } from '@/components/common/LanguageSwitch'
 
+interface NavLink {
+  href: string
+  label: string
+}
+
+interface MobileMenuProps {
+  links: NavLink[]
+  onClose: () => void
+}
+
+function MobileMenu({ links, onClose }: MobileMenuProps) {
+  return (
+    <motion.div
+      key="mobile-menu"
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -8 }}
+      transition={{ duration: 0.18 }}
+      className="fixed inset-x-0 top-14 z-40 border-b border-border/60 bg-background/95 backdrop-blur-md md:hidden"
+    >
+      <ul className="mx-auto flex max-w-[1200px] flex-col gap-1 px-4 py-4">
+        {links.map(({ href, label }) => (
+          <li key={href}>
+            <a
+              href={href}
+              onClick={onClose}
+              className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/70 transition-colors hover:bg-foreground/8 hover:text-foreground"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  )
+}
+
 export function Navbar() {
   const t = useTranslations('nav')
   const [open, setOpen] = useState(false)
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { href: '/#projects', label: t('projects') },
     { href: '/#contact', label: t('contact') },
   ]
@@ -28,14 +65,10 @@ export function Navbar() {
             MP
           </Link>
 
-          {/* Desktop links */}
           <ul className="hidden items-center gap-6 text-sm md:flex">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
-                <a
-                  href={href}
-                  className="text-foreground/60 transition-colors hover:text-foreground"
-                >
+                <a href={href} className="text-foreground/60 transition-colors hover:text-foreground">
                   {label}
                 </a>
               </li>
@@ -45,7 +78,6 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <LanguageSwitch />
             <ThemeToggle />
-            {/* Mobile hamburger */}
             <button
               className="flex h-9 w-9 items-center justify-center rounded-md text-foreground/60 transition-colors hover:bg-foreground/8 hover:text-foreground md:hidden"
               onClick={() => setOpen(v => !v)}
@@ -58,32 +90,8 @@ export function Navbar() {
         </nav>
       </header>
 
-      {/* Mobile menu overlay */}
       <AnimatePresence>
-        {open && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.18 }}
-            className="fixed inset-x-0 top-14 z-40 border-b border-border/60 bg-background/95 backdrop-blur-md md:hidden"
-          >
-            <ul className="mx-auto flex max-w-[1200px] flex-col gap-1 px-4 py-4">
-              {navLinks.map(({ href, label }) => (
-                <li key={href}>
-                  <a
-                    href={href}
-                    onClick={() => setOpen(false)}
-                    className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/70 transition-colors hover:bg-foreground/8 hover:text-foreground"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
+        {open && <MobileMenu links={navLinks} onClose={() => setOpen(false)} />}
       </AnimatePresence>
     </>
   )

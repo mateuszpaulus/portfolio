@@ -1,7 +1,13 @@
+import Hero from '@/components/sections/Hero'
+import About from '@/components/sections/About'
+
 export default function HomePage() {
   return (
-    <main>
-      <h1>Hello Portfolio</h1>
-    </main>
+    <>
+      <Hero />
+      <About />
+      <div id="projects" />
+      <div id="contact" />
+    </>
   )
 }

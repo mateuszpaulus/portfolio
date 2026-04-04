@@ -4,9 +4,17 @@
     "contact": "Contact"
   },
   "hero": {
-    "role": "Fullstack Developer",
+    "badge": "Fullstack Developer",
+    "title": "Mateusz Paulus",
+    "subtitle": "I build fast, scalable web applications with focus on performance and clean architecture.",
     "cta_projects": "View projects",
     "cta_cv": "Download CV"
+  },
+  "about": {
+    "heading": "About",
+    "bio": "I'm a fullstack developer passionate about building fast and scalable web applications. I focus on clean architecture and user experience. I enjoy solving complex problems with simple solutions.",
+    "current_focus_label": "Currently",
+    "current_focus": "Next.js 15, TypeScript, system design"
   },
   "footer": {
     "rights": "All rights reserved"
