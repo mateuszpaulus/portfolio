@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "Fullstack Developer",
+    "cta_projects": "View projects",
+    "cta_cv": "Download CV"
+  }
+}
