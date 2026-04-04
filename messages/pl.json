@@ -1,7 +1,9 @@
 {
   "nav": {
     "projects": "Projekty",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "open_menu": "Otwórz menu",
+    "close_menu": "Zamknij menu"
   },
   "hero": {
     "badge": "Fullstack Developer",
@@ -12,27 +14,70 @@
   },
   "about": {
     "heading": "O mnie",
+    "subtitle": "Kim jestem i co robię",
     "bio": "Jestem fullstack developerem z pasją do budowania szybkich i skalowalnych aplikacji webowych. Skupiam się na czystej architekturze i doświadczeniu użytkownika. Lubię rozwiązywać złożone problemy prostymi rozwiązaniami.",
     "current_focus_label": "Aktualnie",
     "current_focus": "Next.js 15, TypeScript, system design"
+  },
+  "projects": {
+    "heading": "Projekty",
+    "subtitle": "Rzeczy które zbudowałem",
+    "filter_all": "Wszystkie",
+    "featured_badge": "Wyróżniony",
+    "in_progress_badge": "W trakcie",
+    "coming_soon": "Wkrótce...",
+    "see_more": "Zobacz więcej",
+    "github": "GitHub",
+    "live_demo": "Live Demo",
+    "close": "Zamknij",
+    "more_stack": "więcej"
+  },
+  "techDecisions": {
+    "heading": "Dlaczego tak buduję",
+    "subtitle": "Decyzje architektoniczne które mają znaczenie"
+  },
+  "performance": {
+    "heading": "Obsesja na punkcie wydajności",
+    "subtitle": "Liczby które mówią same za siebie",
+    "lighthouse": "Lighthouse Score",
+    "accessibility": "Dostępność",
+    "best_practices": "Best Practices",
+    "seo": "SEO",
+    "lcp": "Largest Contentful Paint",
+    "cls": "Cumulative Layout Shift",
+    "inp": "Interaction to Next Paint",
+    "bundle": "Rozmiar bundle",
+    "measured_at": "Zmierzono"
+  },
+  "contact": {
+    "heading": "Kontakt",
+    "subtitle": "Porozmawiajmy o Twoim projekcie",
+    "name": "Imię i nazwisko",
+    "email": "Email",
+    "message": "Wiadomość",
+    "send": "Wyślij wiadomość",
+    "sending": "Wysyłanie...",
+    "success_title": "Wiadomość wysłana!",
+    "success_message": "Odezwę się najszybciej jak to możliwe.",
+    "error_title": "Coś poszło nie tak",
+    "error_message": "Spróbuj ponownie lub napisz bezpośrednio na email.",
+    "name_required": "Imię jest wymagane",
+    "email_required": "Email jest wymagany",
+    "email_invalid": "Niepoprawny adres email",
+    "message_required": "Wiadomość jest wymagana",
+    "message_min": "Wiadomość musi mieć minimum 10 znaków"
   },
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone"
   },
   "notFound": {
     "title": "Strona nie istnieje",
+    "subtitle": "Przepraszam, nie mogę znaleźć tej strony.",
     "back": "Wróć do strony głównej"
   },
-  "projects": {
-    "heading": "Projekty",
-    "subtitle": "Rzeczy, które zbudowałem — kliknij kartę, aby dowiedzieć się więcej.",
-    "inProgress": "W trakcie",
-    "viewCode": "Kod źródłowy",
-    "viewLive": "Podgląd",
-    "close": "Zamknij"
-  },
-  "techDecisions": {
-    "heading": "Decyzje techniczne",
-    "subtitle": "Dlaczego wybrałem te narzędzia i jakie problemy rozwiązują."
+  "error": {
+    "title": "Coś poszło nie tak",
+    "subtitle": "Wystąpił nieoczekiwany błąd.",
+    "retry": "Spróbuj ponownie"
   }
 }

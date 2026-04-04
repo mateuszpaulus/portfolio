@@ -38,17 +38,19 @@ function FilterBar({
   filters,
   activeFilter,
   onSelect,
+  allLabel,
 }: {
   filters: string[]
   activeFilter: string
   onSelect: (f: string) => void
+  allLabel: string
 }) {
   return (
     <div className="mb-10 flex flex-wrap gap-2">
       {filters.map(f => (
         <FilterButton
           key={f}
-          label={f}
+          label={f === 'All' ? allLabel : f}
           active={f === activeFilter}
           onClick={() => onSelect(f)}
         />
@@ -71,6 +73,7 @@ export default function Projects() {
           filters={filters}
           activeFilter={activeFilter}
           onSelect={setActiveFilter}
+          allLabel={t('filter_all')}
         />
 
         <div className="grid gap-6 sm:grid-cols-2">

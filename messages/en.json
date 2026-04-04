@@ -1,7 +1,9 @@
 {
   "nav": {
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu"
   },
   "hero": {
     "badge": "Fullstack Developer",
@@ -11,28 +13,71 @@
     "cta_cv": "Download CV"
   },
   "about": {
-    "heading": "About",
-    "bio": "I'm a fullstack developer passionate about building fast and scalable web applications. I focus on clean architecture and user experience. I enjoy solving complex problems with simple solutions.",
+    "heading": "About me",
+    "subtitle": "Who I am and what I do",
+    "bio": "I am a fullstack developer passionate about building fast and scalable web applications. I focus on clean architecture and user experience. I enjoy solving complex problems with simple solutions.",
     "current_focus_label": "Currently",
     "current_focus": "Next.js 15, TypeScript, system design"
+  },
+  "projects": {
+    "heading": "Projects",
+    "subtitle": "Things I have built",
+    "filter_all": "All",
+    "featured_badge": "Featured",
+    "in_progress_badge": "In Progress",
+    "coming_soon": "Coming soon...",
+    "see_more": "See more",
+    "github": "GitHub",
+    "live_demo": "Live Demo",
+    "close": "Close",
+    "more_stack": "more"
+  },
+  "techDecisions": {
+    "heading": "Why I build this way",
+    "subtitle": "Architectural decisions that matter"
+  },
+  "performance": {
+    "heading": "Engineering obsession",
+    "subtitle": "Numbers that speak for themselves",
+    "lighthouse": "Lighthouse Score",
+    "accessibility": "Accessibility",
+    "best_practices": "Best Practices",
+    "seo": "SEO",
+    "bundle": "Bundle size",
+    "lcp": "Largest Contentful Paint",
+    "cls": "Cumulative Layout Shift",
+    "inp": "Interaction to Next Paint",
+    "measured_at": "Measured at"
+  },
+  "contact": {
+    "heading": "Contact",
+    "subtitle": "Let's talk about your project",
+    "name": "Full name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending...",
+    "success_title": "Message sent!",
+    "success_message": "I will get back to you as soon as possible.",
+    "error_title": "Something went wrong",
+    "error_message": "Please try again or email me directly.",
+    "name_required": "Name is required",
+    "email_required": "Email is required",
+    "email_invalid": "Invalid email address",
+    "message_required": "Message is required",
+    "message_min": "Message must be at least 10 characters"
   },
   "footer": {
     "rights": "All rights reserved"
   },
   "notFound": {
     "title": "Page not found",
+    "subtitle": "Sorry, I could not find this page.",
     "back": "Back to home"
   },
-  "projects": {
-    "heading": "Projects",
-    "subtitle": "Things I've built — click a card to learn more.",
-    "inProgress": "In progress",
-    "viewCode": "View code",
-    "viewLive": "Live site",
-    "close": "Close"
-  },
-  "techDecisions": {
-    "heading": "Tech Decisions",
-    "subtitle": "Why I picked these tools and what problems they solve."
+  "error": {
+    "title": "Something went wrong",
+    "subtitle": "An unexpected error occurred.",
+    "retry": "Try again"
   }
 }

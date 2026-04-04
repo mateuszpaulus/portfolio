@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl'
+
 function GithubIcon({ size = 18 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -15,11 +17,13 @@ function LinkedinIcon({ size = 18 }: { size?: number }) {
 }
 
 export function Footer() {
+  const t = useTranslations('footer')
+
   return (
     <footer className="border-t border-border/60 py-6">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-4 sm:px-6">
         <p className="text-sm text-foreground/50">
-          © 2026 Mateusz Paulus
+          © 2026 Mateusz Paulus. {t('rights')}.
         </p>
         <div className="flex items-center gap-3">
           <a

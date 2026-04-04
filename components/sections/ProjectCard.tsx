@@ -87,7 +87,7 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
           {project.title}
         </h3>
         {project.inProgress ? (
-          <InProgressBadge label={t('inProgress')} />
+          <InProgressBadge label={t('in_progress_badge')} />
         ) : (
           <CardLinks githubUrl={project.githubUrl} liveUrl={project.liveUrl} />
         )}
