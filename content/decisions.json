@@ -1,0 +1,26 @@
+[
+  {
+    "id": "app-router",
+    "icon": "Zap",
+    "title": "Next.js App Router",
+    "description": "Server Components minimize JS sent to the client, resulting in Lighthouse 95+ scores."
+  },
+  {
+    "id": "tailwind",
+    "icon": "Palette",
+    "title": "Tailwind CSS",
+    "description": "Zero dead CSS and full dark mode control via class strategy with no runtime overhead."
+  },
+  {
+    "id": "shadcn",
+    "icon": "Component",
+    "title": "shadcn/ui",
+    "description": "Component code lives in the project, not in node_modules. Full control, smaller bundle."
+  },
+  {
+    "id": "pwa",
+    "icon": "Smartphone",
+    "title": "Progressive Web App",
+    "description": "The site is installable and works offline. Service worker caches assets on first visit."
+  }
+]

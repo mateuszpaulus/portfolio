@@ -2,6 +2,8 @@ import Hero from '@/components/sections/Hero'
 import About from '@/components/sections/About'
 import Projects from '@/components/sections/Projects'
 import TechDecisions from '@/components/sections/TechDecisions'
+import Performance from '@/components/sections/Performance'
+import Contact from '@/components/sections/Contact'
 
 export default function HomePage() {
   return (
@@ -10,7 +12,8 @@ export default function HomePage() {
       <About />
       <Projects />
       <TechDecisions />
-      <div id="contact" />
+      <Performance />
+      <Contact />
     </>
   )
 }

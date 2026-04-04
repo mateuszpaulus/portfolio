@@ -1,0 +1,15 @@
+{
+  "lighthouse": {
+    "performance": 98,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100
+  },
+  "webVitals": {
+    "lcp": "1.2s",
+    "cls": "0.01",
+    "inp": "45ms"
+  },
+  "bundleSize": "87KB",
+  "measuredAt": "2026-04-04"
+}
