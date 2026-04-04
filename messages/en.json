@@ -7,5 +7,12 @@
     "role": "Fullstack Developer",
     "cta_projects": "View projects",
     "cta_cv": "Download CV"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "back": "Back to home"
   }
 }
