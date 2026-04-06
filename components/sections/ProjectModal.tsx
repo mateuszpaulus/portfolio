@@ -88,7 +88,7 @@ function ModalContent({ project, onClose }: { project: Project; onClose: () => v
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-hover)]"
+            className="brand-btn inline-flex items-center gap-2 rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-hover)]"
           >
             <ExternalLink size={16} />
             {t('live_demo')}

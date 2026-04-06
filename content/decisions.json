@@ -3,24 +3,36 @@
     "id": "app-router",
     "icon": "Zap",
     "title": "Next.js App Router",
-    "description": "Server Components minimize JS sent to the client, resulting in Lighthouse 95+ scores."
+    "description": "Server Components minimize JS sent to the client. Pages load fast because the browser receives HTML, not a bundle that needs to render. Result: Lighthouse 95+ with zero compromises on interactivity."
   },
   {
     "id": "tailwind",
     "icon": "Palette",
-    "title": "Tailwind CSS",
-    "description": "Zero dead CSS and full dark mode control via class strategy with no runtime overhead."
+    "title": "Tailwind CSS v4",
+    "description": "Zero dead CSS — only the classes used ship to production. Dark mode via class strategy means no runtime theme flickering. Co-located styles make components self-documenting and easy to refactor."
   },
   {
     "id": "shadcn",
     "icon": "Component",
-    "title": "shadcn/ui",
-    "description": "Component code lives in the project, not in node_modules. Full control, smaller bundle."
+    "title": "shadcn/ui over component libraries",
+    "description": "Component source lives in the project, not behind a version in node_modules. Full control over markup, styling, and accessibility. No forced updates, no breaking changes from upstream — just clean, owned code."
   },
   {
     "id": "pwa",
     "icon": "Smartphone",
     "title": "Progressive Web App",
-    "description": "The site is installable and works offline. Service worker caches assets on first visit."
+    "description": "The site is installable and works offline with a three-tier caching strategy: Cache First for assets, Stale While Revalidate for pages, Network First for dynamic content. First revisit loads in under 500ms."
+  },
+  {
+    "id": "vanilla-three",
+    "icon": "Box",
+    "title": "Plain Three.js, not React Three Fiber",
+    "description": "R3F adds ~200KB to the bundle for a single visual effect. Plain Three.js with dynamic import keeps the shader background at ~30KB gzipped while retaining full WebGL control and clean lifecycle management."
+  },
+  {
+    "id": "scroll-css",
+    "icon": "MousePointer",
+    "title": "CSS scroll-driven over JS observers",
+    "description": "Scroll animations run on the compositor thread — no JavaScript, no jank, no layout thrashing. IntersectionObserver fallback ensures Firefox and Safari users still see smooth fade-ins via @supports queries."
   }
 ]

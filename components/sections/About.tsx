@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, type Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { Zap } from 'lucide-react'
 import { SectionHeading } from '@/components/common/SectionHeading'
@@ -15,15 +15,6 @@ const TECH_STACK = [
   'REST API', 'GraphQL', 'AWS',
 ]
 
-const stackContainer: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.04 } },
-}
-
-const stackItem: Variants = {
-  hidden: { opacity: 0, scale: 0.9 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: 'easeOut' as const } },
-}
 
 interface BioColumnProps {
   bio: string
@@ -54,21 +45,15 @@ function BioColumn({ bio, focusLabel, focus, visible }: BioColumnProps) {
   )
 }
 
-function TechStackGrid({ visible }: { visible: boolean }) {
+function TechStackGrid() {
   return (
-    <motion.div
-      variants={stackContainer}
-      initial="hidden"
-      animate={visible ? 'show' : 'hidden'}
-    >
-      <div className="flex flex-wrap gap-2">
-        {TECH_STACK.map(tech => (
-          <motion.div key={tech} variants={stackItem}>
-            <TechTag name={tech} />
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
+    <div className="scroll-stagger flex flex-wrap content-start gap-2">
+      {TECH_STACK.map(tech => (
+        <div key={tech} className="scroll-fade-up">
+          <TechTag name={tech} />
+        </div>
+      ))}
+    </div>
   )
 }
 
@@ -90,7 +75,7 @@ export default function About() {
             focus={t('current_focus')}
             visible={isInView}
           />
-          <TechStackGrid visible={isInView} />
+          <TechStackGrid />
         </div>
       </div>
     </section>

@@ -50,8 +50,8 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
 
   const navLinks: NavLink[] = [
-    { href: '/#projects', label: t('projects') },
-    { href: '/#contact', label: t('contact') },
+    { href: '#projects', label: t('projects') },
+    { href: '#contact', label: t('contact') },
   ]
 
   return (

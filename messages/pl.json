@@ -6,29 +6,35 @@
     "close_menu": "Zamknij menu"
   },
   "hero": {
-    "badge": "Fullstack Developer",
+    "badge": "Otwarty na oferty",
     "title": "Mateusz Paulus",
-    "subtitle": "Buduję szybkie i skalowalne aplikacje webowe z naciskiem na wydajność i czystą architekturę.",
+    "subtitle": "Projektuję i buduję aplikacje webowe, które są szybkie z założenia — od schematu bazy danych po ostatni piksel. Next.js, TypeScript i zdrowa obsesja na punkcie Lighthouse.",
     "cta_projects": "Zobacz projekty",
     "cta_cv": "Pobierz CV",
     "typing_words": [
-      "Next.js Developer",
+      "Fullstack Developer",
+      "Next.js Specialist",
       "TypeScript Enthusiast",
-      "Obsesja na punkcie wydajności",
-      "Czysty kod ponad wszystko"
+      "Performance Engineer",
+      "Problem Solver"
     ]
   },
   "about": {
     "heading": "O mnie",
-    "subtitle": "Kim jestem i co robię",
-    "bio": "Jestem fullstack developerem z pasją do budowania szybkich i skalowalnych aplikacji webowych. Skupiam się na czystej architekturze i doświadczeniu użytkownika. Lubię rozwiązywać złożone problemy prostymi rozwiązaniami.",
-    "current_focus_label": "Aktualnie",
-    "current_focus": "Next.js 15, TypeScript, system design"
+    "subtitle": "Inżynier, nie tylko programista",
+    "bio": "Jestem fullstack developerem, który dba o pełny obraz — od czystego API po płynne animacje 60fps. Zaczynałem od Javy i Spring Boot, zakochałem się w ekosystemie React, a teraz buduję end-to-end w Next.js i TypeScript. Wierzę, że świetne oprogramowanie jest niewidoczne: szybkie ładowanie, intuicyjny interfejs, zero niespodzianek.",
+    "current_focus_label": "Aktualnie skupiony na",
+    "current_focus": "Server Components, edge computing i budowanie SaaS starter kitu z integracją Stripe"
+  },
+  "experience": {
+    "heading": "Doświadczenie",
+    "subtitle": "Gdzie pracowałem"
   },
   "projects": {
     "heading": "Projekty",
-    "subtitle": "Rzeczy które zbudowałem",
+    "subtitle": "Realne problemy, realne rozwiązania",
     "filter_all": "Wszystkie",
+    "back": "← Wróć do projektów",
     "featured_badge": "Wyróżniony",
     "in_progress_badge": "W trakcie",
     "coming_soon": "Wkrótce...",
@@ -36,7 +42,8 @@
     "github": "GitHub",
     "live_demo": "Live Demo",
     "close": "Zamknij",
-    "more_stack": "więcej"
+    "more_stack": "więcej",
+    "scroll_hint": "Przewiń, aby zobaczyć więcej"
   },
   "stats": {
     "experience": "lata doświadczenia",
@@ -45,12 +52,12 @@
     "coffee": "kawa przed kodem"
   },
   "skills": {
-    "heading": "Umiejętności",
-    "subtitle": "Technologie z którymi pracuję"
+    "heading": "Tech stack",
+    "subtitle": "Narzędzia których używam codziennie, regularnie i okazjonalnie"
   },
   "techDecisions": {
-    "heading": "Dlaczego tak buduję",
-    "subtitle": "Decyzje architektoniczne które mają znaczenie"
+    "heading": "Filozofia inżynierska",
+    "subtitle": "Każda decyzja ma powód — oto moje"
   },
   "performance": {
     "heading": "Obsesja na punkcie wydajności",
@@ -66,8 +73,8 @@
     "measured_at": "Zmierzono"
   },
   "contact": {
-    "heading": "Kontakt",
-    "subtitle": "Porozmawiajmy o Twoim projekcie",
+    "heading": "Porozmawiajmy",
+    "subtitle": "Masz pomysł na projekt? Zwykle odpisuję w ciągu 24 godzin.",
     "name": "Imię i nazwisko",
     "email": "Email",
     "message": "Wiadomość",
@@ -81,7 +88,10 @@
     "email_required": "Email jest wymagany",
     "email_invalid": "Niepoprawny adres email",
     "message_required": "Wiadomość jest wymagana",
-    "message_min": "Wiadomość musi mieć minimum 10 znaków"
+    "message_min": "Wiadomość musi mieć minimum 10 znaków",
+    "info_text": "Otwarty na nowe możliwości, współpracę i ciekawe projekty. Napisz do mnie, a odezwę się jak najszybciej.",
+    "availability": "Dostępny na zlecenia freelance",
+    "response_time": "Śr. czas odpowiedzi: <24h"
   },
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone"

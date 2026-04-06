@@ -14,7 +14,7 @@ function DecisionCard({ decision }: { decision: Decision }) {
   const Icon = getLucideIcon(decision.icon)
 
   return (
-    <div className="flex flex-col gap-3 rounded-xl border border-border bg-card p-6">
+    <div className="scroll-scale-in flex flex-col gap-3 rounded-xl border border-border bg-card p-6">
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--brand)]/10">
           <Icon size={20} className="text-[var(--brand)]" />

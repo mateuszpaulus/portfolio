@@ -17,7 +17,7 @@ export default function Error({ reset }: ErrorProps) {
       <p className="text-sm text-foreground/60">{t('subtitle')}</p>
       <button
         onClick={reset}
-        className="rounded-md bg-[var(--brand)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-hover)]"
+        className="brand-btn rounded-md bg-[var(--brand)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-hover)]"
       >
         {t('retry')}
       </button>

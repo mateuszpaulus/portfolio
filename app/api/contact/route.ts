@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
       to: process.env.CONTACT_EMAIL!,
       subject: `New message from ${name}`,
       replyTo: email,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent from paulus.dev`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent from mateuszpaulus.dev`,
     })
 
     return NextResponse.json({ success: true })

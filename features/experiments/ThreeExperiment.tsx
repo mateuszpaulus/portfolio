@@ -29,24 +29,50 @@ function SphereTooltip() {
   )
 }
 
+function SpherePlaceholder({ size }: { size: number }) {
+  return (
+    <div
+      style={{ width: size, height: size }}
+      className="flex items-center justify-center"
+      aria-hidden="true"
+    >
+      <div className="h-32 w-32 animate-pulse rounded-full border border-[var(--brand)]/20 bg-[var(--brand)]/5" />
+    </div>
+  )
+}
+
 export default function ThreeExperiment() {
   const isDesktop = useMediaQuery('(min-width: 1024px)')
   const [mounted, setMounted] = useState(false)
+  const [visible, setVisible] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
 
   useEffect(() => {
-    const delay = isDesktop ? 2000 : 500
+    const delay = isDesktop ? 4000 : 3500
     const timer = setTimeout(() => setMounted(true), delay)
     return () => clearTimeout(timer)
   }, [isDesktop])
 
-  if (!mounted) return null
+  // Fade in after sphere mounts
+  useEffect(() => {
+    if (!mounted) return
+    const raf = requestAnimationFrame(() => setVisible(true))
+    return () => cancelAnimationFrame(raf)
+  }, [mounted])
 
   // Mobile / tablet — non-interactive background
   if (!isDesktop) {
+    if (!mounted) {
+      return (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-30" aria-hidden="true">
+          <SpherePlaceholder size={500} />
+        </div>
+      )
+    }
     return (
       <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-30"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-1000"
+        style={{ opacity: visible ? 0.3 : 0 }}
         aria-hidden="true"
       >
         <ThreeSphere interactive={false} />
@@ -55,10 +81,18 @@ export default function ThreeExperiment() {
   }
 
   // Desktop — interactive, positioned right
+  if (!mounted) {
+    return (
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 select-none opacity-70" aria-hidden="true">
+        <SpherePlaceholder size={400} />
+      </div>
+    )
+  }
+
   return (
     <div
-      className="absolute right-0 top-1/2 -translate-y-1/2 select-none opacity-70"
-      style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+      className="absolute right-0 top-1/2 -translate-y-1/2 select-none transition-opacity duration-1000"
+      style={{ cursor: isDragging ? 'grabbing' : 'grab', opacity: visible ? 0.7 : 0 }}
       onMouseDown={() => setIsDragging(true)}
       onMouseUp={() => setIsDragging(false)}
       onMouseLeave={() => setIsDragging(false)}

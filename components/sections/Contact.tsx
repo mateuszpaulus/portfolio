@@ -28,11 +28,21 @@ function LinkedinIcon() {
 }
 
 function ContactInfo() {
+  const t = useTranslations('contact')
+
   return (
     <div className="flex flex-col gap-6">
+      {/* Availability badge */}
+      <div className="flex items-center gap-4">
+        <span className="inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/8 px-3 py-1 text-sm font-medium text-green-600 dark:text-green-400">
+          <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" aria-hidden />
+          {t('availability')}
+        </span>
+        <span className="text-xs text-[var(--foreground-secondary)]">{t('response_time')}</span>
+      </div>
+
       <p className="text-base leading-relaxed text-[var(--foreground-secondary)]">
-        Open to new opportunities, collaborations, and interesting projects.
-        Drop me a message and I will get back to you shortly.
+        {t('info_text')}
       </p>
       <div className="flex flex-col gap-4">
         <a
@@ -216,7 +226,7 @@ function ContactForm({ t }: { t: ReturnType<typeof useTranslations> }) {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-hover)] disabled:cursor-not-allowed disabled:opacity-60"
+        className="brand-btn flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-hover)] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting && <Loader2 size={16} className="animate-spin" />}
         {isSubmitting ? t('sending') : t('send')}

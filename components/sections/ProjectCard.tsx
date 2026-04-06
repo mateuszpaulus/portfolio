@@ -1,15 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { ExternalLink } from 'lucide-react'
+import { useRouter } from '@/lib/i18n/navigation'
 import { TechTag } from '@/components/common/TechTag'
 import { cn } from '@/lib/utils'
 import type { Project } from '@/features/projects/types'
 
 interface ProjectCardProps {
   project: Project
-  onOpen: (project: Project) => void
 }
 
 function InProgressBadge({ label }: { label: string }) {
@@ -59,12 +59,25 @@ function CardLinks({ githubUrl, liveUrl }: { githubUrl?: string | null; liveUrl?
   )
 }
 
-export function ProjectCard({ project, onOpen }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   const t = useTranslations('projects')
+  const router = useRouter()
+  const locale = useLocale()
 
-  const handleClick = () => {
-    if (!project.inProgress) onOpen(project)
+  function handleClick() {
+    if (project.inProgress) return
+
+    const target = `/projects/${project.id}`
+
+    if (typeof document !== 'undefined' && 'startViewTransition' in document) {
+      document.startViewTransition(() => router.push(target))
+    } else {
+      router.push(target)
+    }
   }
+
+  // Keep locale in scope (used indirectly via router)
+  void locale
 
   return (
     <motion.article
@@ -74,8 +87,9 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
       exit={{ opacity: 0, y: 16 }}
       transition={{ duration: 0.35, ease: 'easeOut' as const }}
       onClick={handleClick}
+      style={{ viewTransitionName: `project-card-${project.id}` } as React.CSSProperties}
       className={cn(
-        'group flex flex-col gap-4 rounded-xl border border-border bg-card p-6',
+        'group flex h-full flex-col gap-4 rounded-xl border border-border bg-card p-6',
         'transition-shadow duration-200',
         project.inProgress
           ? 'cursor-default opacity-60'
@@ -83,9 +97,19 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
       )}
     >
       <div className="flex items-start justify-between gap-4">
-        <h3 className="text-lg font-semibold leading-snug text-foreground">
-          {project.title}
-        </h3>
+        <div className="flex items-center gap-2">
+          <h3
+            style={{ viewTransitionName: `project-title-${project.id}` } as React.CSSProperties}
+            className="text-lg font-semibold leading-snug text-foreground"
+          >
+            {project.title}
+          </h3>
+          {project.featured && !project.inProgress && (
+            <span className="inline-flex items-center rounded-full bg-[var(--brand)]/10 px-2 py-0.5 text-xs font-medium text-[var(--brand)]">
+              {t('featured_badge')}
+            </span>
+          )}
+        </div>
         {project.inProgress ? (
           <InProgressBadge label={t('in_progress_badge')} />
         ) : (

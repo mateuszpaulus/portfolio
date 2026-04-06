@@ -28,7 +28,7 @@ export default function EasterEgg({ active, onClose }: EasterEggProps) {
               <a
                 href="#contact"
                 onClick={onClose}
-                className="rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-medium text-white transition-colors"
+                className="brand-btn rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-medium text-white transition-colors"
               >
                 {t('cta')}
               </a>

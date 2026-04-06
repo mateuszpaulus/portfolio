@@ -52,7 +52,7 @@ export default function Hero() {
       {/* Subtle brand orb */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-40 bottom-1/4 h-[400px] w-[400px] rounded-full blur-3xl"
+        className="scroll-parallax-slow pointer-events-none absolute -left-40 bottom-1/4 h-[400px] w-[400px] rounded-full blur-3xl"
         style={{ background: 'var(--brand)', opacity: 0.06 }}
       />
 
@@ -62,59 +62,57 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto flex w-full max-w-[1200px] items-center px-4 py-24 sm:px-6 lg:py-0">
         <div className="grid w-full lg:grid-cols-2 lg:gap-16">
-          <motion.div
-            variants={heroContainer}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-start"
-          >
-            <motion.span
-              variants={heroItem}
-              className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--brand)]/30 bg-[var(--brand)]/8 px-3 py-1 text-sm font-medium text-[var(--brand)]"
-            >
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--brand)]" aria-hidden="true" />
-              {t('badge')}
-            </motion.span>
-
-            <motion.h1
-              variants={heroItem}
-              className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-            >
+          <div className="flex flex-col items-start">
+            {/* LCP-critical elements — render immediately, no opacity:0 */}
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               <TextScramble text={t('title')} trigger="mount" speed={25} />
-            </motion.h1>
+            </h1>
 
-            <motion.div variants={heroItem} className="mt-3 h-8 text-lg font-medium">
-              <TypingEffect words={t.raw('typing_words') as string[]} />
-            </motion.div>
-
-            <motion.p
-              variants={heroItem}
-              className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--foreground-secondary)]"
-            >
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--foreground-secondary)]">
               {t('subtitle')}
-            </motion.p>
+            </p>
 
-            <motion.div variants={heroItem} className="mt-8 flex flex-wrap gap-3">
-              <MagneticButton>
-                <a
-                  href="#projects"
-                  className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-hover)]"
-                >
-                  {t('cta_projects')}
-                  <ArrowDown size={16} />
-                </a>
-              </MagneticButton>
-              <MagneticButton>
-                <a
-                  href="/cv.pdf"
-                  download
-                  className="inline-flex items-center rounded-lg border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-[var(--brand)] hover:text-[var(--brand)]"
-                >
-                  {t('cta_cv')}
-                </a>
-              </MagneticButton>
+            {/* Non-LCP elements — animated in with stagger */}
+            <motion.div
+              variants={heroContainer}
+              initial="hidden"
+              animate="visible"
+              className="flex w-full flex-col items-start"
+            >
+              <motion.span
+                variants={heroItem}
+                className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--brand)]/30 bg-[var(--brand)]/8 px-3 py-1 text-sm font-medium text-[var(--brand)]"
+              >
+                <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--brand)]" aria-hidden="true" />
+                {t('badge')}
+              </motion.span>
+
+              <motion.div variants={heroItem} className="mt-3 h-8 text-lg font-medium">
+                <TypingEffect words={t.raw('typing_words') as string[]} />
+              </motion.div>
+
+              <motion.div variants={heroItem} className="mt-8 flex flex-wrap gap-3">
+                <MagneticButton>
+                  <a
+                    href="#projects"
+                    className="brand-btn inline-flex items-center gap-2 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-hover)]"
+                  >
+                    {t('cta_projects')}
+                    <ArrowDown size={16} />
+                  </a>
+                </MagneticButton>
+                <MagneticButton>
+                  <a
+                    href="/cv.pdf"
+                    download
+                    className="inline-flex items-center rounded-lg border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-[var(--brand)] hover:text-[var(--brand)]"
+                  >
+                    {t('cta_cv')}
+                  </a>
+                </MagneticButton>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
 
           <div className="hidden lg:block" aria-hidden="true" />
         </div>

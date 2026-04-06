@@ -6,29 +6,35 @@
     "close_menu": "Close menu"
   },
   "hero": {
-    "badge": "Fullstack Developer",
+    "badge": "Open to work",
     "title": "Mateusz Paulus",
-    "subtitle": "I build fast, scalable web applications with focus on performance and clean architecture.",
-    "cta_projects": "View projects",
+    "subtitle": "I design and build web applications that are fast by default — from database schema to the last pixel. Next.js, TypeScript, and a healthy obsession with Lighthouse scores.",
+    "cta_projects": "See my work",
     "cta_cv": "Download CV",
     "typing_words": [
-      "Next.js Developer",
+      "Fullstack Developer",
+      "Next.js Specialist",
       "TypeScript Enthusiast",
-      "Performance Obsessed",
-      "Clean Code Advocate"
+      "Performance Engineer",
+      "Problem Solver"
     ]
   },
   "about": {
     "heading": "About me",
-    "subtitle": "Who I am and what I do",
-    "bio": "I am a fullstack developer passionate about building fast and scalable web applications. I focus on clean architecture and user experience. I enjoy solving complex problems with simple solutions.",
-    "current_focus_label": "Currently",
-    "current_focus": "Next.js 15, TypeScript, system design"
+    "subtitle": "Engineer, not just a coder",
+    "bio": "I am a fullstack developer who cares about the full picture — from clean API design to smooth 60fps animations. I started with Java and Spring Boot, fell in love with the React ecosystem, and now I build end-to-end with Next.js and TypeScript. I believe great software is invisible: fast loads, intuitive interfaces, zero surprises.",
+    "current_focus_label": "Currently focused on",
+    "current_focus": "Server Components, edge computing, and building a SaaS starter kit with Stripe integration"
+  },
+  "experience": {
+    "heading": "Experience",
+    "subtitle": "Where I have worked"
   },
   "projects": {
     "heading": "Projects",
-    "subtitle": "Things I have built",
+    "subtitle": "Real problems, real solutions",
     "filter_all": "All",
+    "back": "← Back to projects",
     "featured_badge": "Featured",
     "in_progress_badge": "In Progress",
     "coming_soon": "Coming soon...",
@@ -36,7 +42,8 @@
     "github": "GitHub",
     "live_demo": "Live Demo",
     "close": "Close",
-    "more_stack": "more"
+    "more_stack": "more",
+    "scroll_hint": "Scroll to see more"
   },
   "stats": {
     "experience": "years of experience",
@@ -45,12 +52,12 @@
     "coffee": "coffee before code"
   },
   "skills": {
-    "heading": "Skills",
-    "subtitle": "Technologies I work with"
+    "heading": "Tech stack",
+    "subtitle": "Tools I use daily, regularly, and occasionally"
   },
   "techDecisions": {
-    "heading": "Why I build this way",
-    "subtitle": "Architectural decisions that matter"
+    "heading": "Engineering philosophy",
+    "subtitle": "Every decision has a reason — here are mine"
   },
   "performance": {
     "heading": "Engineering obsession",
@@ -66,8 +73,8 @@
     "measured_at": "Measured at"
   },
   "contact": {
-    "heading": "Contact",
-    "subtitle": "Let's talk about your project",
+    "heading": "Let's talk",
+    "subtitle": "Have a project in mind? I typically respond within 24 hours.",
     "name": "Full name",
     "email": "Email",
     "message": "Message",
@@ -81,7 +88,10 @@
     "email_required": "Email is required",
     "email_invalid": "Invalid email address",
     "message_required": "Message is required",
-    "message_min": "Message must be at least 10 characters"
+    "message_min": "Message must be at least 10 characters",
+    "info_text": "Open to new opportunities, collaborations, and interesting projects. Drop me a message and I will get back to you shortly.",
+    "availability": "Available for freelance work",
+    "response_time": "Avg. response time: <24h"
   },
   "footer": {
     "rights": "All rights reserved"

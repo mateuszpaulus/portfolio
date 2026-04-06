@@ -1,27 +1,45 @@
 'use client'
 
-import { WifiOff } from 'lucide-react'
+import { WifiOff, RefreshCw, Home } from 'lucide-react'
 
 export default function OfflinePage() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-4 text-center">
-      <WifiOff
-        size={64}
-        className="text-[var(--foreground-secondary)]"
-        aria-hidden="true"
-      />
-      <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-semibold text-foreground">No connection</h1>
-        <p className="text-sm text-[var(--foreground-secondary)]">
+    <main className="flex min-h-screen items-center justify-center px-6">
+      <div className="max-w-md text-center">
+        <WifiOff
+          className="mx-auto mb-6 text-[var(--foreground-secondary)]"
+          size={48}
+          aria-hidden="true"
+        />
+
+        <h1 className="mb-2 text-2xl font-bold text-foreground">No connection</h1>
+
+        <p className="mb-2 text-[var(--foreground-secondary)]">
           Check your internet connection and try again.
         </p>
+
+        <p className="mb-8 text-sm text-[var(--foreground-secondary)]">
+          If you have visited this page before, some sections may still be available from cache.
+        </p>
+
+        <div className="flex justify-center gap-3">
+          <button
+            onClick={() => window.location.reload()}
+            className="brand-btn flex items-center gap-2 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-hover)]"
+          >
+            <RefreshCw size={16} />
+            Try again
+          </button>
+
+          <a
+            href="/"
+            className="flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-semibold transition-colors hover:border-[var(--brand)] hover:text-[var(--brand)]"
+          >
+            <Home size={16} />
+            Home
+          </a>
+        </div>
       </div>
-      <button
-        onClick={() => window.location.reload()}
-        className="rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-hover)]"
-      >
-        Try again
-      </button>
-    </div>
+    </main>
   )
 }

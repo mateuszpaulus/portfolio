@@ -1,0 +1,41 @@
+[
+  {
+    "id": "freelance",
+    "role": "Fullstack Developer",
+    "company": "Freelance",
+    "period": "2024 — Present",
+    "description": "Building web applications for clients — from MVPs to production systems. Focus on Next.js, TypeScript, and clean architecture.",
+    "highlights": [
+      "Delivered 10+ projects across e-commerce, SaaS, and content platforms",
+      "Maintained 95+ Lighthouse scores on all client projects",
+      "Set up CI/CD pipelines and monitoring for long-term maintainability"
+    ],
+    "stack": ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Vercel"]
+  },
+  {
+    "id": "junior-dev",
+    "role": "Junior Frontend Developer",
+    "company": "Software House",
+    "period": "2023 — 2024",
+    "description": "Worked on client-facing web apps in a team of 6. Responsible for component development, code reviews, and performance optimization.",
+    "highlights": [
+      "Rebuilt legacy jQuery dashboard into React — 40% faster load times",
+      "Introduced TypeScript strict mode to the frontend codebase",
+      "Mentored 2 interns on React best practices"
+    ],
+    "stack": ["React", "TypeScript", "Redux", "REST API", "Jest"]
+  },
+  {
+    "id": "internship",
+    "role": "Frontend Intern",
+    "company": "Tech Startup",
+    "period": "2022 — 2023",
+    "description": "First professional experience. Built UI components, fixed bugs, and learned production workflows — Git, code reviews, agile sprints.",
+    "highlights": [
+      "Shipped 30+ components to the company's design system",
+      "Reduced bundle size by 25% through code splitting and lazy loading",
+      "Automated visual regression testing with Chromatic"
+    ],
+    "stack": ["React", "JavaScript", "Storybook", "CSS Modules", "Git"]
+  }
+]

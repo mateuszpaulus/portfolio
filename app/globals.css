@@ -119,15 +119,21 @@
 
 /* Portfolio design tokens — override shadcn neutrals with indigo accent */
 :root {
-  --foreground-secondary: #6b7280;
-  --brand: #6366f1;
-  --brand-hover: #4f46e5;
+  --foreground-secondary: #4b5563;
+  --brand: #4f46e5;
+  --brand-hover: #4338ca;
 }
 
 .dark {
-  --foreground-secondary: #9ca3af;
+  --foreground-secondary: #d1d5db;
   --brand: #818cf8;
-  --brand-hover: #6366f1;
+  --brand-hover: #a5b4fc;
+}
+
+/* Buttons with white text need darker bg in dark mode for contrast */
+.dark .brand-btn {
+  --brand: #4f46e5;
+  --brand-hover: #4338ca;
 }
 
 @layer base {
@@ -187,6 +193,111 @@ body::before {
   to { transform: rotate(360deg); }
 }
 
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   View Transitions
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@keyframes vt-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes vt-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+::view-transition-old(root) { animation: vt-fade-out 0.25s ease forwards; }
+::view-transition-new(root) { animation: vt-fade-in  0.25s ease forwards; }
+
+/* Card/title morph — browser handles layout interpolation automatically */
+::view-transition-group(project-card),
+::view-transition-group(project-title) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Scroll-driven Animations
+   Fallback: elements visible in browsers
+   without animation-timeline: scroll()
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@keyframes scroll-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scroll-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scroll-scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes heading-reveal {
+  from { clip-path: inset(0 100% 0 0); opacity: 0; }
+  to   { clip-path: inset(0 0% 0 0);   opacity: 1; }
+}
+@keyframes scroll-parallax-slow {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-60px); }
+}
+
+/* noinspection CssInvalidPropertyValue */
+@supports (animation-timeline: scroll()) {
+  .scroll-fade-up {
+    animation: scroll-fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 25%;
+  }
+  .scroll-fade-in {
+    animation: scroll-fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 20%;
+  }
+  .scroll-scale-in {
+    animation: scroll-scale-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 20%;
+  }
+  .scroll-heading-reveal {
+    animation: heading-reveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 20%;
+  }
+  .scroll-parallax-slow {
+    animation: scroll-parallax-slow linear both;
+    animation-timeline: scroll();
+    animation-range: 0 50%;
+  }
+
+  /* Stagger delays for direct children */
+  .scroll-stagger > *:nth-child(1)  { animation-delay:   0ms; }
+  .scroll-stagger > *:nth-child(2)  { animation-delay:  80ms; }
+  .scroll-stagger > *:nth-child(3)  { animation-delay: 160ms; }
+  .scroll-stagger > *:nth-child(4)  { animation-delay: 240ms; }
+  .scroll-stagger > *:nth-child(5)  { animation-delay: 320ms; }
+  .scroll-stagger > *:nth-child(6)  { animation-delay: 400ms; }
+  .scroll-stagger > *:nth-child(7)  { animation-delay: 480ms; }
+  .scroll-stagger > *:nth-child(8)  { animation-delay: 560ms; }
+  .scroll-stagger > *:nth-child(9)  { animation-delay: 640ms; }
+  .scroll-stagger > *:nth-child(10) { animation-delay: 720ms; }
+  .scroll-stagger > *:nth-child(11) { animation-delay: 800ms; }
+  .scroll-stagger > *:nth-child(12) { animation-delay: 880ms; }
+}
+
+/* Fallback — ensure visibility in Firefox / Safari */
+@supports not (animation-timeline: scroll()) {
+  .scroll-fade-up,
+  .scroll-fade-in,
+  .scroll-scale-in,
+  .scroll-heading-reveal {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -195,5 +306,19 @@ body::before {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .scroll-fade-up,
+  .scroll-fade-in,
+  .scroll-scale-in,
+  .scroll-heading-reveal,
+  .scroll-parallax-slow {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
   }
 }

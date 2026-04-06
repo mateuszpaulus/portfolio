@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { TextScramble } from '@/components/common/TextScramble'
 
@@ -13,13 +10,7 @@ interface SectionHeadingProps {
 
 export function SectionHeading({ title, subtitle, align = 'left', scramble = false }: SectionHeadingProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={cn('mb-10', align === 'center' && 'text-center')}
-    >
+    <div className={cn('mb-10 scroll-fade-up', align === 'center' && 'text-center')}>
       <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
         {scramble ? (
           <TextScramble text={title} trigger="inView" speed={25} />
@@ -36,6 +27,6 @@ export function SectionHeading({ title, subtitle, align = 'left', scramble = fal
       {subtitle && (
         <p className="mt-3 text-base text-[var(--foreground-secondary)]">{subtitle}</p>
       )}
-    </motion.div>
+    </div>
   )
 }
