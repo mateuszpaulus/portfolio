@@ -110,11 +110,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </span>
           )}
         </div>
-        {project.inProgress ? (
-          <InProgressBadge label={t('in_progress_badge')} />
-        ) : (
+        <div className="flex items-center gap-3">
+          {project.inProgress && <InProgressBadge label={t('in_progress_badge')} />}
           <CardLinks githubUrl={project.githubUrl} liveUrl={project.liveUrl} />
-        )}
+        </div>
       </div>
 
       <p className="flex-1 text-sm leading-relaxed text-[var(--foreground-secondary)]">

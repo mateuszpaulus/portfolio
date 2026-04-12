@@ -8,23 +8,23 @@
   "hero": {
     "badge": "Otwarty na oferty",
     "title": "Mateusz Paulus",
-    "subtitle": "Projektuję i buduję aplikacje webowe, które są szybkie z założenia — od schematu bazy danych po ostatni piksel. Next.js, TypeScript i zdrowa obsesja na punkcie Lighthouse.",
+    "subtitle": "Buduję aplikacje webowe na całym stosie — Vue.js na frontendzie, Node.js i Java na backendzie, Docker pomiędzy. 3 lata doświadczenia, 2 komercyjnie, i ciągle się uczę.",
     "cta_projects": "Zobacz projekty",
     "cta_cv": "Pobierz CV",
     "typing_words": [
-      "Fullstack Developer",
-      "Next.js Specialist",
-      "TypeScript Enthusiast",
-      "Performance Engineer",
+      "Software Engineer",
+      "Vue.js Specialist",
+      "Full-Stack Developer",
+      "UI Kit Builder",
       "Problem Solver"
     ]
   },
   "about": {
     "heading": "O mnie",
     "subtitle": "Inżynier, nie tylko programista",
-    "bio": "Jestem fullstack developerem, który dba o pełny obraz — od czystego API po płynne animacje 60fps. Zaczynałem od Javy i Spring Boot, zakochałem się w ekosystemie React, a teraz buduję end-to-end w Next.js i TypeScript. Wierzę, że świetne oprogramowanie jest niewidoczne: szybkie ładowanie, intuicyjny interfejs, zero niespodzianek.",
-    "current_focus_label": "Aktualnie skupiony na",
-    "current_focus": "Server Components, edge computing i budowanie SaaS starter kitu z integracją Stripe"
+    "bio": "Jestem inżynierem oprogramowania z 3-letnim doświadczeniem, w tym 2 lata komercyjnie. Specjalizuję się we Vue.js na frontendzie, ale pracuję na całym stosie — Node.js i NestJS na backendzie, relacyjne i nierelacyjne bazy danych, a coraz więcej Javy i Spring Boota. Zależy mi na jakości kodu: buduję biblioteki komponentów UI (Storybook), prowadzę code review i wprowadzam dobre praktyki w każdym zespole.",
+    "current_focus_label": "Aktualnie rozwijam",
+    "current_focus": "Java / Spring Boot i Docker — pogłębiam backend, jednocześnie prowadząc frontend z Vue.js"
   },
   "experience": {
     "heading": "Doświadczenie",

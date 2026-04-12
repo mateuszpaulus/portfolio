@@ -1,61 +1,50 @@
 [
   {
+    "id": "skedify",
+    "title": "Skedify",
+    "description": "Linktree-style profile builder with a built-in booking system and payment integration. Clients book appointments directly from your profile — no registration needed.",
+    "longDescription": "Skedify is a fullstack SaaS that lets creators and freelancers build a public profile with a list of services, links, and an availability calendar. Clients can book appointments directly from the profile without signing up. The platform supports a paid PRO plan (Stripe subscriptions), transactional email notifications (Resend), avatar uploads via Cloudinary, and authentication with Clerk. The backend is built with Java 21 and Spring Boot 4, with a Next.js 15 frontend and a React Native mobile app built with Expo.",
+    "stack": ["Next.js 15", "TypeScript", "Tailwind CSS v4", "Clerk", "Java 21", "Spring Boot 4", "PostgreSQL", "JPA/Hibernate", "Stripe", "Resend", "Cloudinary", "Expo React Native"],
+    "githubUrl": "https://github.com/mateuszpaulus/skedify",
+    "liveUrl": "https://skedify-store.vercel.app/",
+    "imageUrl": null,
+    "inProgress": true,
+    "featured": true
+  },
+  {
+    "id": "management-app",
+    "title": "Management App",
+    "description": "Microservice-based task management backend with boards, subtasks, permissions, and a full activity audit trail. Communication between services via gRPC.",
+    "longDescription": "A REST API backend built on a microservice architecture for managing tasks (todos) with subtasks, priorities, tags, and categories. Supports boards with sections, a sharing system with permission levels (viewer/editor/admin), and a full activity audit trail for every change. Inter-service communication is handled via gRPC, with JWT-based authorization throughout. Documented with Swagger/OpenAPI. The frontend (React + Three.js 3D visualization) is planned as the next phase — the goal is a Miro-like 3D board where notes live in a globe-shaped space.",
+    "stack": ["Java 21", "Spring Boot", "Spring Cloud Gateway", "gRPC", "PostgreSQL", "Spring Security", "JWT", "Swagger/OpenAPI"],
+    "githubUrl": "https://github.com/mateuszpaulus/management-application",
+    "liveUrl": null,
+    "imageUrl": null,
+    "inProgress": true,
+    "featured": true
+  },
+  {
+    "id": "mindmap-3d",
+    "title": "Mindmap 3D",
+    "description": "Interactive 3D note visualization on a globe — drag, connect, and explore relationships between ideas in spatial space. Frontend planned for Management App.",
+    "longDescription": "A web app inspired by Miro, where notes (tiles) are displayed in a 3D space shaped like a globe. Users can drag notes, create connections between them, and visualize relationships spatially. Built on top of the Management App API (Spring Boot + JWT), the frontend uses React Three Fiber and Three.js for the 3D scene, with drag-and-drop interactions and real-time link rendering. This is the planned next phase of the management-application project.",
+    "stack": ["React", "Three.js", "React Three Fiber", "TypeScript", "Spring Boot", "PostgreSQL", "JWT"],
+    "githubUrl": null,
+    "liveUrl": null,
+    "imageUrl": null,
+    "inProgress": true,
+    "featured": true
+  },
+  {
     "id": "portfolio",
     "title": "Developer Portfolio",
     "description": "Personal portfolio built from scratch with Next.js 16 App Router, featuring WebGL shader backgrounds, scroll-driven CSS animations, View Transitions API, full i18n (pl/en), PWA with offline support, and 95+ Lighthouse scores across all categories.",
     "longDescription": "A showcase of modern web engineering — this portfolio uses plain Three.js for a fluid noise shader background (no React Three Fiber to keep the bundle lean), CSS scroll-driven animations with @supports fallbacks, and the View Transitions API for smooth page morphing. Built as a PWA with three-tier caching strategy. CI/CD via GitHub Actions with automated Lighthouse audits on every PR.",
     "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js", "next-intl"],
     "githubUrl": "https://github.com/mateuszpaulus/portfolio",
-    "liveUrl": "https://mateuszpaulus.dev",
-    "imageUrl": null,
-    "inProgress": false,
-    "featured": true
-  },
-  {
-    "id": "taskflow",
-    "title": "TaskFlow",
-    "description": "Full-stack project management app with real-time Kanban boards, team collaboration, and automated workflows. Built with Next.js, PostgreSQL, and WebSocket for live updates.",
-    "longDescription": "TaskFlow is a project management tool designed for small teams. Features include drag-and-drop Kanban boards with real-time sync via WebSockets, role-based access control, automated task assignments based on custom rules, time tracking with weekly reports, and Slack/Discord webhook integrations. The backend uses PostgreSQL with Prisma ORM and Redis for session caching.",
-    "stack": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Redis", "WebSocket"],
-    "githubUrl": "https://github.com/mateuszpaulus/taskflow",
-    "liveUrl": null,
-    "imageUrl": null,
-    "inProgress": false,
-    "featured": true
-  },
-  {
-    "id": "devblog",
-    "title": "DevBlog Engine",
-    "description": "Headless blog platform with MDX support, syntax highlighting, full-text search, and an admin dashboard. Optimized for Core Web Vitals with static generation and ISR.",
-    "longDescription": "A performant blog engine built for developers. MDX-powered content with custom components, Shiki-based syntax highlighting, and Algolia full-text search. Admin dashboard for content management with draft/publish workflow. Uses ISR (Incremental Static Regeneration) for near-instant page loads while keeping content fresh. RSS feed, OG image generation, and reading time estimation included.",
-    "stack": ["Next.js", "TypeScript", "MDX", "Tailwind CSS", "Algolia", "Vercel"],
-    "githubUrl": "https://github.com/mateuszpaulus/devblog",
     "liveUrl": null,
     "imageUrl": null,
     "inProgress": false,
     "featured": false
-  },
-  {
-    "id": "api-gateway",
-    "title": "API Gateway",
-    "description": "Lightweight API gateway with rate limiting, request validation, JWT auth, and comprehensive logging. Handles 10k+ req/s on a single instance.",
-    "longDescription": "A Node.js-based API gateway designed for microservice architectures. Features include configurable rate limiting (sliding window), JSON Schema request validation, JWT authentication with refresh token rotation, request/response logging to ELK stack, circuit breaker pattern for downstream services, and health check endpoints. Docker-compose setup for local development with all dependencies.",
-    "stack": ["Node.js", "TypeScript", "Docker", "Redis", "JWT", "Express"],
-    "githubUrl": "https://github.com/mateuszpaulus/api-gateway",
-    "liveUrl": null,
-    "imageUrl": null,
-    "inProgress": false,
-    "featured": false
-  },
-  {
-    "id": "starter",
-    "title": "SaaS Starter Kit",
-    "description": "Production-ready SaaS boilerplate with auth, payments, team management, and admin panel. Built with Next.js, PostgreSQL, and Stripe integration.",
-    "longDescription": "A comprehensive starter kit for building SaaS products fast. Includes email/OAuth authentication (NextAuth), Stripe subscription management with webhooks, team invitations and role-based permissions, admin dashboard with analytics, transactional emails via Resend, and a complete CI/CD pipeline. Designed to go from idea to MVP in days, not weeks.",
-    "stack": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Stripe", "NextAuth"],
-    "githubUrl": null,
-    "liveUrl": null,
-    "imageUrl": null,
-    "inProgress": true
   }
 ]

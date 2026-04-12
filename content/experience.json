@@ -1,41 +1,44 @@
 [
   {
-    "id": "freelance",
-    "role": "Fullstack Developer",
-    "company": "Freelance",
-    "period": "2024 — Present",
-    "description": "Building web applications for clients — from MVPs to production systems. Focus on Next.js, TypeScript, and clean architecture.",
+    "id": "current",
+    "role": "Software Engineer",
+    "company": "*** Private",
+    "period": "10/2024 — Present",
+    "description": "Working as a software engineer across multiple production applications — responsible for both developing new features and maintaining existing systems. Scope covers frontend and backend, with active growth in Java/Spring Boot and Docker.",
     "highlights": [
-      "Delivered 10+ projects across e-commerce, SaaS, and content platforms",
-      "Maintained 95+ Lighthouse scores on all client projects",
-      "Set up CI/CD pipelines and monitoring for long-term maintainability"
+      "Developing and maintaining several production applications across the full stack",
+      "Building and maintaining an internal UI kit with Storybook — shared component library and design system",
+      "Introducing and enforcing good development practices: code reviews, coding standards, and architectural guidelines",
+      "Implementing observability with Grafana for monitoring and user behaviour tracking",
+      "Expanding backend skills with Java, Spring Boot and Docker in production context"
     ],
-    "stack": ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Vercel"]
+    "stack": ["Vue.js", "React", "Angular", "TypeScript", "Node.js", "Java", "Spring Boot", "Docker", "Storybook", "Grafana", "PostgreSQL", "MongoDB", "MySQL"]
   },
   {
-    "id": "junior-dev",
-    "role": "Junior Frontend Developer",
-    "company": "Software House",
-    "period": "2023 — 2024",
-    "description": "Worked on client-facing web apps in a team of 6. Responsible for component development, code reviews, and performance optimization.",
+    "id": "venture-labs-dev",
+    "role": "Software Developer",
+    "company": "Venture Labs",
+    "period": "11/2022 — 09/2024",
+    "description": "Worked on two client products — MachineMaster and OneHive — from requirements meetings through to feature delivery. Collaborated with UX/UI and backend teams, handling new functionality development and application refactoring.",
     "highlights": [
-      "Rebuilt legacy jQuery dashboard into React — 40% faster load times",
-      "Introduced TypeScript strict mode to the frontend codebase",
-      "Mentored 2 interns on React best practices"
+      "MachineMaster: built and extended an app for multi-brand industrial machine management (Vue 2/3, Nuxt.js, GraphQL, Pinia, Strapi)",
+      "OneHive: refactored and expanded a business productivity platform (Vue 2, Nuxt.js, NestJS, NodeJS)",
+      "Participated in technical recruitment processes for Vue and Angular frontend developer roles",
+      "Full ownership of assigned tasks — from requirements analysis through implementation to delivery"
     ],
-    "stack": ["React", "TypeScript", "Redux", "REST API", "Jest"]
+    "stack": ["Vue 2", "Vue 3", "Nuxt.js", "TypeScript", "Vuetify", "Pinia", "Vuex", "GraphQL", "Apollo", "NestJS", "NodeJS", "Strapi", "Sentry", "SCSS"]
   },
   {
-    "id": "internship",
-    "role": "Frontend Intern",
-    "company": "Tech Startup",
-    "period": "2022 — 2023",
-    "description": "First professional experience. Built UI components, fixed bugs, and learned production workflows — Git, code reviews, agile sprints.",
+    "id": "venture-labs-trainee",
+    "role": "JavaScript Trainee",
+    "company": "Venture Labs",
+    "period": "08/2022 — 10/2022",
+    "description": "First commercial experience — joined the Bienenwanderung project, a platform supporting the beekeeping community. Focused on UI redesign based on Figma, collaborating closely with the design team.",
     "highlights": [
-      "Shipped 30+ components to the company's design system",
-      "Reduced bundle size by 25% through code splitting and lazy loading",
-      "Automated visual regression testing with Chromatic"
+      "Redesigned pages using Vue 2 and Nuxt.js from Figma specifications",
+      "Collaborated with designers on delivering pixel-perfect responsive UI",
+      "First production experience with GraphQL and Apollo in a real client project"
     ],
-    "stack": ["React", "JavaScript", "Storybook", "CSS Modules", "Git"]
+    "stack": ["Vue 2", "Nuxt.js", "Vuetify", "CSS", "GraphQL", "Apollo"]
   }
 ]

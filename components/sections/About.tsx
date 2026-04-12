@@ -9,10 +9,10 @@ import { useInView } from '@/hooks/useInView'
 import { StatsRow } from '@/components/sections/StatsRow'
 
 const TECH_STACK = [
-  'Next.js', 'React', 'TypeScript',
-  'Node.js', 'PostgreSQL', 'Tailwind CSS',
-  'Prisma', 'Docker', 'Git',
-  'REST API', 'GraphQL', 'AWS',
+  'Vue.js', 'Nuxt.js', 'TypeScript',
+  'React', 'Angular', 'Node.js',
+  'Java', 'Spring Boot', 'Docker',
+  'PostgreSQL', 'MongoDB', 'GraphQL',
 ]
 
 

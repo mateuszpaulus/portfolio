@@ -8,23 +8,23 @@
   "hero": {
     "badge": "Open to work",
     "title": "Mateusz Paulus",
-    "subtitle": "I design and build web applications that are fast by default — from database schema to the last pixel. Next.js, TypeScript, and a healthy obsession with Lighthouse scores.",
+    "subtitle": "I build web applications across the full stack — Vue.js on the frontend, Node.js and Java on the backend, Docker in between. 3 years of experience, 2 commercial, and still learning every day.",
     "cta_projects": "See my work",
     "cta_cv": "Download CV",
     "typing_words": [
-      "Fullstack Developer",
-      "Next.js Specialist",
-      "TypeScript Enthusiast",
-      "Performance Engineer",
+      "Software Engineer",
+      "Vue.js Specialist",
+      "Full-Stack Developer",
+      "UI Kit Builder",
       "Problem Solver"
     ]
   },
   "about": {
     "heading": "About me",
     "subtitle": "Engineer, not just a coder",
-    "bio": "I am a fullstack developer who cares about the full picture — from clean API design to smooth 60fps animations. I started with Java and Spring Boot, fell in love with the React ecosystem, and now I build end-to-end with Next.js and TypeScript. I believe great software is invisible: fast loads, intuitive interfaces, zero surprises.",
-    "current_focus_label": "Currently focused on",
-    "current_focus": "Server Components, edge computing, and building a SaaS starter kit with Stripe integration"
+    "bio": "I'm a software engineer with 3 years of experience, 2 of them commercial. I specialize in Vue.js on the frontend but work across the full stack — Node.js and NestJS on the backend, relational and non-relational databases, and increasingly Java and Spring Boot. I care about code quality: I build UI component libraries with Storybook, run code reviews, and push for good practices in every team I join.",
+    "current_focus_label": "Currently growing in",
+    "current_focus": "Java / Spring Boot and Docker — deepening backend skills while continuing to lead on the frontend with Vue.js"
   },
   "experience": {
     "heading": "Experience",
