@@ -28,7 +28,7 @@ export default function BackToTop() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-40 rounded-full border border-border bg-background p-3 shadow-sm transition-colors duration-200 hover:border-[var(--brand)] hover:text-[var(--brand)]"
+          className="fixed bottom-8 right-8 z-40 rounded-full border border-border bg-background p-3 shadow-sm transition-colors duration-200 hover:border-brand hover:text-brand"
           aria-label="Back to top"
         >
           <ArrowUp size={18} />

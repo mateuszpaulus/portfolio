@@ -5,7 +5,6 @@ const ORBIT_DEGREES = [0, 60, 120, 180, 240, 300]
 export default function CssSphereBackground() {
   return (
     <>
-      {/* Gradient overlay — keeps text readable */}
       <div
         className="pointer-events-none absolute inset-0 z-[1]"
         style={{
@@ -15,7 +14,6 @@ export default function CssSphereBackground() {
         aria-hidden="true"
       />
 
-      {/* CSS globe centered in background */}
       <div
         className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
         aria-hidden="true"

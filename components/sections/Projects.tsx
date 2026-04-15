@@ -15,8 +15,8 @@ function FilterButton({ label, active, onClick }: { label: string; active: boole
       className={cn(
         'rounded-full px-4 py-1.5 text-sm font-medium transition-colors',
         active
-          ? 'brand-btn bg-[var(--brand)] text-white'
-          : 'border border-border text-[var(--foreground-secondary)] hover:border-[var(--brand)] hover:text-foreground'
+          ? 'brand-btn bg-brand text-white'
+          : 'border border-border text-foreground-secondary hover:border-brand hover:text-foreground'
       )}
     >
       {label}
@@ -52,12 +52,12 @@ function ScrollDots({ count, active, onSelect }: { count: number; active: number
           key={i}
           onClick={() => onSelect(i)}
           aria-label={`Go to project ${i + 1}`}
-          className="flex min-h-[44px] min-w-[44px] items-center justify-center"
+          className="flex min-h-11 min-w-11 items-center justify-center"
         >
           <span
             className={cn(
               'block h-2 rounded-full transition-all duration-200',
-              i === active ? 'w-6 bg-[var(--brand)]' : 'w-2 bg-border hover:bg-[var(--brand)]/50'
+              i === active ? 'w-6 bg-brand' : 'w-2 bg-border hover:bg-brand/50'
             )}
           />
         </button>
@@ -76,10 +76,10 @@ export default function Projects() {
   const [activeCard, setActiveCard] = useState(0)
   const [showHint, setShowHint] = useState(true)
   const isDragging = useRef(false)
+  const [isDraggingCursor, setIsDraggingCursor] = useState(false)
   const hasDragged = useRef(false)
   const dragStart = useRef({ x: 0, scrollLeft: 0 })
 
-  // Wheel → horizontal scroll (desktop only, via CSS media query the container is hidden on mobile)
   useEffect(() => {
     const container = scrollRef.current
     if (!container) return
@@ -92,7 +92,6 @@ export default function Projects() {
     return () => container.removeEventListener('wheel', handleWheel)
   }, [])
 
-  // Track active card + hide hint
   useEffect(() => {
     const container = scrollRef.current
     if (!container) return
@@ -134,6 +133,7 @@ export default function Projects() {
 
   function handlePointerDown(e: React.PointerEvent) {
     isDragging.current = true
+    setIsDraggingCursor(true)
     hasDragged.current = false
     dragStart.current = { x: e.clientX, scrollLeft: scrollRef.current?.scrollLeft ?? 0 }
     ;(e.target as HTMLElement).setPointerCapture?.(e.pointerId)
@@ -148,9 +148,9 @@ export default function Projects() {
 
   function handlePointerUp() {
     isDragging.current = false
+    setIsDraggingCursor(false)
   }
 
-  // Block click navigation if user just dragged
   function handleClickCapture(e: React.MouseEvent) {
     if (hasDragged.current) {
       e.stopPropagation()
@@ -161,7 +161,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+      <div className="mx-auto max-w-300 px-4 sm:px-6">
         <SectionHeading title={t('heading')} subtitle={t('subtitle')} scramble />
 
         <FilterBar
@@ -171,7 +171,6 @@ export default function Projects() {
           allLabel={t('filter_all')}
         />
 
-        {/* Horizontal scroll carousel — all screen sizes */}
         <div className="relative">
           {showHint && projects.length > 2 && (
             <p className="mb-4 text-center text-sm text-foreground/70">
@@ -181,7 +180,7 @@ export default function Projects() {
           <div
             ref={scrollRef}
             className="scrollbar-hide flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4"
-            style={{ cursor: isDragging.current ? 'grabbing' : 'grab' }}
+            style={{ cursor: isDraggingCursor ? 'grabbing' : 'grab' }}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
@@ -192,15 +191,14 @@ export default function Projects() {
               {projects.map(project => (
                 <div
                   key={project.id}
-                  className="w-[85vw] min-w-[280px] max-w-[400px] flex-shrink-0 snap-start sm:w-[340px] lg:w-[380px]"
+                  className="w-[85vw] min-w-70 max-w-100 shrink-0 snap-start sm:w-85 lg:w-95"
                 >
                   <ProjectCard project={project} />
                 </div>
               ))}
             </AnimatePresence>
           </div>
-          {/* Fade gradient right */}
-          <div className="pointer-events-none absolute bottom-4 right-0 top-0 w-16 bg-gradient-to-l from-background to-transparent sm:w-24" />
+          <div className="pointer-events-none absolute bottom-4 right-0 top-0 w-16 bg-linear-to-l from-background to-transparent sm:w-24" />
           <ScrollDots count={projects.length} active={activeCard} onSelect={scrollToCard} />
         </div>
       </div>

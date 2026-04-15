@@ -37,7 +37,7 @@ function CardLinks({ githubUrl, liveUrl }: { githubUrl?: string | null; liveUrl?
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
-          className="text-[var(--foreground-secondary)] transition-colors hover:text-foreground"
+          className="text-foreground-secondary transition-colors hover:text-foreground"
           onClick={e => e.stopPropagation()}
         >
           <GithubIcon />
@@ -49,7 +49,7 @@ function CardLinks({ githubUrl, liveUrl }: { githubUrl?: string | null; liveUrl?
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Live site"
-          className="text-[var(--foreground-secondary)] transition-colors hover:text-foreground"
+          className="text-foreground-secondary transition-colors hover:text-foreground"
           onClick={e => e.stopPropagation()}
         >
           <ExternalLink size={18} />
@@ -76,7 +76,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
     }
   }
 
-  // Keep locale in scope (used indirectly via router)
   void locale
 
   return (
@@ -105,7 +104,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.title}
           </h3>
           {project.featured && !project.inProgress && (
-            <span className="inline-flex items-center rounded-full bg-[var(--brand)]/10 px-2 py-0.5 text-xs font-medium text-[var(--brand)]">
+            <span className="inline-flex items-center rounded-full bg-brand/10 px-2 py-0.5 text-xs font-medium text-brand">
               {t('featured_badge')}
             </span>
           )}
@@ -116,7 +115,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
 
-      <p className="flex-1 text-sm leading-relaxed text-[var(--foreground-secondary)]">
+      <p className="flex-1 text-sm leading-relaxed text-foreground-secondary">
         {project.description}
       </p>
 

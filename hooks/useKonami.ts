@@ -32,7 +32,6 @@ export function useKonami(onSuccess: () => void) {
       return
     }
 
-    // Valid key — clear any lingering error state
     setWrongKey(false)
 
     if (next.length === KONAMI.length) {

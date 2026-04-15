@@ -34,7 +34,7 @@ export function WebVitalCard({ label, value, description, status }: WebVitalCard
           style={{ backgroundColor: color }}
           aria-hidden="true"
         />
-        <span className="text-sm text-[var(--foreground-secondary)]">{label}</span>
+        <span className="text-sm text-foreground-secondary">{label}</span>
       </div>
       <span
         className="text-3xl font-bold tabular-nums"
@@ -42,7 +42,7 @@ export function WebVitalCard({ label, value, description, status }: WebVitalCard
       >
         {value}
       </span>
-      <span className="text-xs text-[var(--foreground-secondary)]">{description}</span>
+      <span className="text-xs text-foreground-secondary">{description}</span>
     </motion.div>
   )
 }

@@ -21,7 +21,7 @@ function SphereTooltip() {
 
   return (
     <div
-      className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-background/80 px-3 py-1 text-xs text-[var(--foreground-secondary)] backdrop-blur-sm"
+      className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-background/80 px-3 py-1 text-xs text-foreground-secondary backdrop-blur-sm"
       aria-hidden="true"
     >
       Drag to rotate · Scroll to zoom
@@ -36,7 +36,7 @@ function SpherePlaceholder({ size }: { size: number }) {
       className="flex items-center justify-center"
       aria-hidden="true"
     >
-      <div className="h-32 w-32 animate-pulse rounded-full border border-[var(--brand)]/20 bg-[var(--brand)]/5" />
+      <div className="h-32 w-32 animate-pulse rounded-full border border-brand/20 bg-brand/5" />
     </div>
   )
 }
@@ -53,14 +53,12 @@ export default function ThreeExperiment() {
     return () => clearTimeout(timer)
   }, [isDesktop])
 
-  // Fade in after sphere mounts
   useEffect(() => {
     if (!mounted) return
     const raf = requestAnimationFrame(() => setVisible(true))
     return () => cancelAnimationFrame(raf)
   }, [mounted])
 
-  // Mobile / tablet — non-interactive background
   if (!isDesktop) {
     if (!mounted) {
       return (
@@ -80,7 +78,6 @@ export default function ThreeExperiment() {
     )
   }
 
-  // Desktop — interactive, positioned right
   if (!mounted) {
     return (
       <div className="absolute right-0 top-1/2 -translate-y-1/2 select-none opacity-70" aria-hidden="true">

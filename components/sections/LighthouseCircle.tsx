@@ -70,10 +70,10 @@ export function LighthouseCircle({ value, label }: LighthouseCircleProps) {
           <span className="text-2xl font-bold tabular-nums text-foreground">
             {value}
           </span>
-          <span className="text-xs text-[var(--foreground-secondary)]">%</span>
+          <span className="text-xs text-foreground-secondary">%</span>
         </div>
       </div>
-      <span className="text-center text-sm text-[var(--foreground-secondary)]">
+      <span className="text-center text-sm text-foreground-secondary">
         {label}
       </span>
     </div>

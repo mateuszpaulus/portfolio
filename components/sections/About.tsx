@@ -31,14 +31,14 @@ function BioColumn({ bio, focusLabel, focus, visible }: BioColumnProps) {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className="flex flex-col gap-6"
     >
-      <p className="text-base leading-relaxed text-[var(--foreground-secondary)] sm:text-lg">
+      <p className="text-base leading-relaxed text-foreground-secondary sm:text-lg">
         {bio}
       </p>
       <div className="flex items-start gap-3 rounded-lg border border-border bg-card p-4">
-        <Zap size={18} className="mt-0.5 shrink-0 text-[var(--brand)]" />
+        <Zap size={18} className="mt-0.5 shrink-0 text-brand" />
         <div>
           <span className="text-sm font-semibold text-foreground">{focusLabel}:</span>{' '}
-          <span className="text-sm text-[var(--foreground-secondary)]">{focus}</span>
+          <span className="text-sm text-foreground-secondary">{focus}</span>
         </div>
       </div>
     </motion.div>
@@ -63,7 +63,7 @@ export default function About() {
 
   return (
     <section id="about" ref={ref} className="py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+      <div className="mx-auto max-w-300 px-4 sm:px-6">
         <SectionHeading title={t('heading')} scramble />
         <div className="mb-16">
           <StatsRow />

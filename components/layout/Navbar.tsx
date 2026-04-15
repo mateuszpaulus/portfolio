@@ -28,7 +28,7 @@ function MobileMenu({ links, onClose }: MobileMenuProps) {
       transition={{ duration: 0.18 }}
       className="fixed inset-x-0 top-14 z-40 border-b border-border/60 bg-background/95 backdrop-blur-md md:hidden"
     >
-      <ul className="mx-auto flex max-w-[1200px] flex-col gap-1 px-4 py-4">
+      <ul className="mx-auto flex max-w-300 flex-col gap-1 px-4 py-4">
         {links.map(({ href, label }) => (
           <li key={href}>
             <a
@@ -57,10 +57,10 @@ export function Navbar() {
   return (
     <>
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-        <nav className="mx-auto flex h-14 max-w-[1200px] items-center justify-between px-4 sm:px-6">
+        <nav className="mx-auto flex h-14 max-w-300 items-center justify-between px-4 sm:px-6">
           <Link
             href="/"
-            className="text-base font-semibold tracking-tight text-foreground transition-colors hover:text-[var(--brand)]"
+            className="text-base font-semibold tracking-tight text-foreground transition-colors hover:text-brand"
           >
             MP
           </Link>

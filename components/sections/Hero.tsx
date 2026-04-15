@@ -37,7 +37,6 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Background dot grid */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -49,30 +48,25 @@ export default function Hero() {
         }}
       />
 
-      {/* Subtle brand orb */}
       <div
         aria-hidden
-        className="scroll-parallax-slow pointer-events-none absolute -left-40 bottom-1/4 h-[400px] w-[400px] rounded-full blur-3xl"
+        className="scroll-parallax-slow pointer-events-none absolute -left-40 bottom-1/4 h-100 w-100 rounded-full blur-3xl"
         style={{ background: 'var(--brand)', opacity: 0.06 }}
       />
 
-      {/* Three.js globe — background on mobile/tablet, interactive on desktop */}
       <ThreeExperiment />
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[1200px] items-center px-4 py-24 sm:px-6 lg:py-0">
+      <div className="relative z-10 mx-auto flex w-full max-w-300 items-center px-4 py-24 sm:px-6 lg:py-0">
         <div className="grid w-full lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col items-start">
-            {/* LCP-critical elements — render immediately, no opacity:0 */}
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               <TextScramble text={t('title')} trigger="mount" speed={25} />
             </h1>
 
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--foreground-secondary)]">
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-foreground-secondary">
               {t('subtitle')}
             </p>
 
-            {/* Non-LCP elements — animated in with stagger */}
             <motion.div
               variants={heroContainer}
               initial="hidden"
@@ -81,9 +75,9 @@ export default function Hero() {
             >
               <motion.span
                 variants={heroItem}
-                className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--brand)]/30 bg-[var(--brand)]/8 px-3 py-1 text-sm font-medium text-[var(--brand)]"
+                className="mt-4 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-3 py-1 text-sm font-medium text-brand"
               >
-                <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--brand)]" aria-hidden="true" />
+                <span className="h-2 w-2 animate-pulse rounded-full bg-brand" aria-hidden="true" />
                 {t('badge')}
               </motion.span>
 
@@ -95,7 +89,7 @@ export default function Hero() {
                 <MagneticButton>
                   <a
                     href="#projects"
-                    className="brand-btn inline-flex items-center gap-2 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-hover)]"
+                    className="brand-btn inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-hover"
                   >
                     {t('cta_projects')}
                     <ArrowDown size={16} />
@@ -105,7 +99,7 @@ export default function Hero() {
                   <a
                     href="/cv.pdf"
                     download
-                    className="inline-flex items-center rounded-lg border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-[var(--brand)] hover:text-[var(--brand)]"
+                    className="inline-flex items-center rounded-lg border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-brand hover:text-brand"
                   >
                     {t('cta_cv')}
                   </a>

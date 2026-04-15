@@ -20,12 +20,12 @@ export function SectionHeading({ title, subtitle, align = 'left', scramble = fal
       </h2>
       <div
         className={cn(
-          'mt-2 h-0.5 w-10 rounded-full bg-[var(--brand)]',
+          'mt-2 h-0.5 w-10 rounded-full bg-brand',
           align === 'center' && 'mx-auto'
         )}
       />
       {subtitle && (
-        <p className="mt-3 text-base text-[var(--foreground-secondary)]">{subtitle}</p>
+        <p className="mt-3 text-base text-foreground-secondary">{subtitle}</p>
       )}
     </div>
   )

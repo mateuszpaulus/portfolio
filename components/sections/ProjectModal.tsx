@@ -50,7 +50,7 @@ function ModalContent({ project, onClose }: { project: Project; onClose: () => v
       <button
         onClick={onClose}
         aria-label={t('close')}
-        className="absolute right-4 top-4 rounded-md p-1.5 text-[var(--foreground-secondary)] transition-colors hover:bg-accent hover:text-foreground"
+        className="absolute right-4 top-4 rounded-md p-1.5 text-foreground-secondary transition-colors hover:bg-accent hover:text-foreground"
       >
         <X size={18} />
       </button>
@@ -59,7 +59,7 @@ function ModalContent({ project, onClose }: { project: Project; onClose: () => v
         {project.title}
       </h2>
 
-      <p className="mb-6 text-sm leading-relaxed text-[var(--foreground-secondary)]">
+      <p className="mb-6 text-sm leading-relaxed text-foreground-secondary">
         {project.description}
       </p>
 
@@ -88,7 +88,7 @@ function ModalContent({ project, onClose }: { project: Project; onClose: () => v
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="brand-btn inline-flex items-center gap-2 rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-hover)]"
+            className="brand-btn inline-flex items-center gap-2 rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-hover"
           >
             <ExternalLink size={16} />
             {t('live_demo')}

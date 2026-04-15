@@ -21,7 +21,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border/60 py-6">
-      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex max-w-300 items-center justify-between px-4 sm:px-6">
         <p className="text-sm text-foreground/50">
           © 2026 Mateusz Paulus. {t('rights')}.
         </p>

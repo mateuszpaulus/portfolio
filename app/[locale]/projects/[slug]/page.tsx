@@ -55,7 +55,6 @@ export default async function ProjectPage({ params }: Props) {
     <div className="relative z-10 min-h-[80vh] pb-16 pt-24">
       <div className="mx-auto max-w-4xl px-6">
 
-        {/* Card — viewTransitionName matches ProjectCard */}
         <div
           style={{ viewTransitionName: `project-card-${project.id}` } as React.CSSProperties}
           className="mb-8 rounded-2xl border border-border bg-card p-8"
@@ -77,14 +76,14 @@ export default async function ProjectPage({ params }: Props) {
             {project.stack.map(tech => (
               <span
                 key={tech}
-                className="rounded-full border border-border px-3 py-1 text-sm text-[var(--foreground-secondary)]"
+                className="rounded-full border border-border px-3 py-1 text-sm text-foreground-secondary"
               >
                 {tech}
               </span>
             ))}
           </div>
 
-          <p className="mb-8 text-lg leading-relaxed text-[var(--foreground-secondary)]">
+          <p className="mb-8 text-lg leading-relaxed text-foreground-secondary">
             {project.longDescription ?? project.description}
           </p>
 
@@ -94,7 +93,7 @@ export default async function ProjectPage({ params }: Props) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brand-btn rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[var(--brand-hover)]"
+                className="brand-btn rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-hover"
               >
                 {t('github')}
               </a>
@@ -104,7 +103,7 @@ export default async function ProjectPage({ params }: Props) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-[var(--brand)] hover:text-[var(--brand)]"
+                className="rounded-lg border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-brand hover:text-brand"
               >
                 {t('live_demo')}
               </a>
@@ -114,7 +113,7 @@ export default async function ProjectPage({ params }: Props) {
 
         <Link
           href="/#projects"
-          className="inline-flex items-center gap-2 text-[var(--foreground-secondary)] transition-colors hover:text-[var(--brand)]"
+          className="inline-flex items-center gap-2 text-foreground-secondary transition-colors hover:text-brand"
         >
           {t('back')}
         </Link>

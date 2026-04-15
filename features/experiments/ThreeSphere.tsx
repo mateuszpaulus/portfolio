@@ -27,7 +27,6 @@ export default function ThreeSphere({ interactive = true }: ThreeSphereProps) {
     renderer.setClearColor(0x000000, 0)
     mountRef.current.appendChild(renderer.domElement)
 
-    // Outer wireframe sphere
     const outerGeometry = new THREE.SphereGeometry(2, 32, 32)
     const outerMaterial = new THREE.MeshBasicMaterial({
       color: 0x6366f1,
@@ -38,7 +37,6 @@ export default function ThreeSphere({ interactive = true }: ThreeSphereProps) {
     const outerSphere = new THREE.Mesh(outerGeometry, outerMaterial)
     scene.add(outerSphere)
 
-    // Inner solid sphere
     const innerGeometry = new THREE.SphereGeometry(1.5, 16, 16)
     const innerMaterial = new THREE.MeshBasicMaterial({
       color: 0x6366f1,
@@ -49,7 +47,6 @@ export default function ThreeSphere({ interactive = true }: ThreeSphereProps) {
     const innerSphere = new THREE.Mesh(innerGeometry, innerMaterial)
     scene.add(innerSphere)
 
-    // Orbital ring
     const ringGeometry = new THREE.TorusGeometry(2.8, 0.005, 16, 100)
     const ringMaterial = new THREE.MeshBasicMaterial({
       color: 0x818cf8,
@@ -60,7 +57,6 @@ export default function ThreeSphere({ interactive = true }: ThreeSphereProps) {
     ring.rotation.x = Math.PI / 3
     scene.add(ring)
 
-    // Particles
     const particlesGeometry = new THREE.BufferGeometry()
     const particleCount = 200
     const positions = new Float32Array(particleCount * 3)
@@ -82,7 +78,6 @@ export default function ThreeSphere({ interactive = true }: ThreeSphereProps) {
     const particles = new THREE.Points(particlesGeometry, particlesMaterial)
     scene.add(particles)
 
-    // OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enableDamping = true
     controls.dampingFactor = 0.05

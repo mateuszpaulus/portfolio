@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, useWatch } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslations } from 'next-intl'
 import { Mail, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
@@ -32,22 +32,21 @@ function ContactInfo() {
 
   return (
     <div className="flex flex-col gap-6">
-      {/* Availability badge */}
       <div className="flex items-center gap-4">
         <span className="inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/8 px-3 py-1 text-sm font-medium text-green-600 dark:text-green-400">
           <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" aria-hidden />
           {t('availability')}
         </span>
-        <span className="text-xs text-[var(--foreground-secondary)]">{t('response_time')}</span>
+        <span className="text-xs text-foreground-secondary">{t('response_time')}</span>
       </div>
 
-      <p className="text-base leading-relaxed text-[var(--foreground-secondary)]">
+      <p className="text-base leading-relaxed text-foreground-secondary">
         {t('info_text')}
       </p>
       <div className="flex flex-col gap-4">
         <a
           href="mailto:paulus.m.mateusz@gmail.com"
-          className="flex items-center gap-3 text-sm text-[var(--foreground-secondary)] transition-colors hover:text-[var(--brand)]"
+          className="flex items-center gap-3 text-sm text-foreground-secondary transition-colors hover:text-brand"
         >
           <Mail size={18} className="shrink-0" />
           paulus.m.mateusz@gmail.com
@@ -56,7 +55,7 @@ function ContactInfo() {
           href="https://github.com/mateuszpaulus"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 text-sm text-[var(--foreground-secondary)] transition-colors hover:text-[var(--brand)]"
+          className="flex items-center gap-3 text-sm text-foreground-secondary transition-colors hover:text-brand"
         >
           <GithubIcon />
           github.com/mateuszpaulus
@@ -65,7 +64,7 @@ function ContactInfo() {
           href="https://linkedin.com/in/mateusz-paulus"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 text-sm text-[var(--foreground-secondary)] transition-colors hover:text-[var(--brand)]"
+          className="flex items-center gap-3 text-sm text-foreground-secondary transition-colors hover:text-brand"
         >
           <LinkedinIcon />
           linkedin.com/in/mateusz-paulus
@@ -81,11 +80,11 @@ function SuccessState({ onReset, t }: { onReset: () => void; t: ReturnType<typeo
       <CheckCircle size={40} className="text-green-500" />
       <div>
         <p className="font-semibold text-foreground">{t('success_title')}</p>
-        <p className="mt-1 text-sm text-[var(--foreground-secondary)]">{t('success_message')}</p>
+        <p className="mt-1 text-sm text-foreground-secondary">{t('success_message')}</p>
       </div>
       <button
         onClick={onReset}
-        className="text-sm text-[var(--brand)] underline-offset-4 hover:underline"
+        className="text-sm text-brand underline-offset-4 hover:underline"
       >
         Send another message
       </button>
@@ -99,11 +98,11 @@ function ErrorState({ onReset, t }: { onReset: () => void; t: ReturnType<typeof 
       <AlertCircle size={40} className="text-red-500" />
       <div>
         <p className="font-semibold text-foreground">{t('error_title')}</p>
-        <p className="mt-1 text-sm text-[var(--foreground-secondary)]">{t('error_message')}</p>
+        <p className="mt-1 text-sm text-foreground-secondary">{t('error_message')}</p>
       </div>
       <button
         onClick={onReset}
-        className="text-sm text-[var(--brand)] underline-offset-4 hover:underline"
+        className="text-sm text-brand underline-offset-4 hover:underline"
       >
         {t('send')}
       </button>
@@ -117,7 +116,7 @@ function ContactForm({ t }: { t: ReturnType<typeof useTranslations> }) {
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
@@ -125,7 +124,7 @@ function ContactForm({ t }: { t: ReturnType<typeof useTranslations> }) {
     defaultValues: { honeypot: '' },
   })
 
-  const messageValue = watch('message') ?? ''
+  const messageValue = useWatch({ control, name: 'message' }) ?? ''
 
   const onSubmit = async (data: ContactFormData) => {
     const response = await fetch('/api/contact', {
@@ -147,12 +146,10 @@ function ContactForm({ t }: { t: ReturnType<typeof useTranslations> }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
-      {/* Honeypot */}
       <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px' }}>
         <input tabIndex={-1} {...register('honeypot')} autoComplete="off" />
       </div>
 
-      {/* Name */}
       <div className="flex flex-col gap-1.5">
         <label htmlFor="name" className="text-sm font-medium text-foreground">
           {t('name')}
@@ -164,7 +161,7 @@ function ContactForm({ t }: { t: ReturnType<typeof useTranslations> }) {
           {...register('name')}
           className={cn(
             'rounded-lg border bg-background px-3 py-2.5 text-sm text-foreground outline-none',
-            'placeholder:text-foreground/30 focus:ring-2 focus:ring-[var(--brand)]/40',
+            'placeholder:text-foreground/30 focus:ring-2 focus:ring-brand/40',
             errors.name ? 'border-red-500' : 'border-border'
           )}
         />
@@ -173,7 +170,6 @@ function ContactForm({ t }: { t: ReturnType<typeof useTranslations> }) {
         )}
       </div>
 
-      {/* Email */}
       <div className="flex flex-col gap-1.5">
         <label htmlFor="email" className="text-sm font-medium text-foreground">
           {t('email')}
@@ -185,7 +181,7 @@ function ContactForm({ t }: { t: ReturnType<typeof useTranslations> }) {
           {...register('email')}
           className={cn(
             'rounded-lg border bg-background px-3 py-2.5 text-sm text-foreground outline-none',
-            'placeholder:text-foreground/30 focus:ring-2 focus:ring-[var(--brand)]/40',
+            'placeholder:text-foreground/30 focus:ring-2 focus:ring-brand/40',
             errors.email ? 'border-red-500' : 'border-border'
           )}
         />
@@ -194,7 +190,6 @@ function ContactForm({ t }: { t: ReturnType<typeof useTranslations> }) {
         )}
       </div>
 
-      {/* Message */}
       <div className="flex flex-col gap-1.5">
         <label htmlFor="message" className="text-sm font-medium text-foreground">
           {t('message')}
@@ -206,7 +201,7 @@ function ContactForm({ t }: { t: ReturnType<typeof useTranslations> }) {
           {...register('message')}
           className={cn(
             'resize-none rounded-lg border bg-background px-3 py-2.5 text-sm text-foreground outline-none',
-            'placeholder:text-foreground/30 focus:ring-2 focus:ring-[var(--brand)]/40',
+            'placeholder:text-foreground/30 focus:ring-2 focus:ring-brand/40',
             errors.message ? 'border-red-500' : 'border-border'
           )}
         />
@@ -216,17 +211,16 @@ function ContactForm({ t }: { t: ReturnType<typeof useTranslations> }) {
           ) : (
             <span />
           )}
-          <p className="shrink-0 text-xs text-[var(--foreground-secondary)]">
+          <p className="shrink-0 text-xs text-foreground-secondary">
             {messageValue.length}/1000
           </p>
         </div>
       </div>
 
-      {/* Submit */}
       <button
         type="submit"
         disabled={isSubmitting}
-        className="brand-btn flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-hover)] disabled:cursor-not-allowed disabled:opacity-60"
+        className="brand-btn flex w-full items-center justify-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting && <Loader2 size={16} className="animate-spin" />}
         {isSubmitting ? t('sending') : t('send')}
@@ -240,7 +234,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+      <div className="mx-auto max-w-300 px-4 sm:px-6">
         <SectionHeading title={t('heading')} subtitle={t('subtitle')} />
         <div className="grid gap-16 lg:grid-cols-2">
           <ContactInfo />

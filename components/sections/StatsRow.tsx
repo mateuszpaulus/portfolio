@@ -31,11 +31,11 @@ function StatItem({ stat, index }: { stat: Stat; index: number }) {
     >
       <span
         ref={ref as React.RefObject<HTMLSpanElement>}
-        className="text-4xl font-bold tabular-nums text-[var(--brand)] sm:text-5xl"
+        className="text-4xl font-bold tabular-nums text-brand sm:text-5xl"
       >
         {count}{stat.suffix}
       </span>
-      <span className="text-sm text-[var(--foreground-secondary)]">
+      <span className="text-sm text-foreground-secondary">
         {t(stat.labelKey)}
       </span>
     </motion.div>

@@ -23,7 +23,7 @@ export function LanguageSwitch() {
             onClick={() => handleSwitch(l)}
             className={`px-1 py-0.5 transition-colors ${
               locale === l
-                ? 'text-[var(--brand)]'
+                ? 'text-brand'
                 : 'text-foreground/50 hover:text-foreground'
             }`}
             aria-current={locale === l ? 'true' : undefined}

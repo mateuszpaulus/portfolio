@@ -49,10 +49,10 @@ export function TypingEffect({
   }, [displayed, isDeleting, wordIndex, words, speed, deleteSpeed, pauseTime])
 
   return (
-    <span className="text-[var(--brand)]">
+    <span className="text-brand">
       {displayed}
       <span
-        className="ml-0.5 inline-block w-[2px] animate-[blink_1s_step-end_infinite] bg-[var(--brand)]"
+        className="ml-0.5 inline-block w-0.5 animate-[blink_1s_step-end_infinite] bg-brand"
         aria-hidden="true"
         style={{ height: '1em', verticalAlign: 'middle' }}
       />

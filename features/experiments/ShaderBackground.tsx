@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { useTheme } from '@/components/layout/ThemeProvider'
 
-// Normalized RGB per theme
 const THEME_COLORS = {
   light: { a: [0.388, 0.400, 0.945] as const, b: [0.647, 0.706, 0.988] as const },
   dark:  { a: [0.263, 0.220, 0.792] as const, b: [0.388, 0.400, 0.945] as const },
@@ -79,7 +78,6 @@ export default function ShaderBackground() {
     let rafId: number
     let dispose: (() => void) | null = null
 
-    // Delay Three.js load until after LCP (3s) to avoid blocking main thread
     const delayTimer = setTimeout(() => {
     if (cancelled || !containerRef.current) return
 
@@ -92,7 +90,6 @@ export default function ShaderBackground() {
       renderer.setClearColor(0x000000, 0)
       containerRef.current.appendChild(renderer.domElement)
 
-      // Orthographic camera fills viewport exactly with a 2×2 plane
       const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1)
       const scene  = new THREE.Scene()
 

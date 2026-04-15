@@ -22,13 +22,11 @@ export default function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null)
   const [state, setState] = useState<CursorState>('default')
 
-  // Use refs for values read inside RAF — avoids stale closure
   const cursorPos = useRef({ x: -100, y: -100 })
   const ringPos = useRef({ x: -100, y: -100 })
   const stateRef = useRef<CursorState>('default')
   const clickingRef = useRef(false)
 
-  // Keep stateRef in sync with state
   useEffect(() => { stateRef.current = state }, [state])
 
   useEffect(() => {
@@ -59,12 +57,10 @@ export default function CustomCursor() {
 
     let rafId: number
     function animate() {
-      // Dot: immediate follow
       if (dotRef.current) {
         dotRef.current.style.left = `${cursorPos.current.x}px`
         dotRef.current.style.top = `${cursorPos.current.y}px`
       }
-      // Ring: lerp follow
       ringPos.current.x += (cursorPos.current.x - ringPos.current.x) * 0.12
       ringPos.current.y += (cursorPos.current.y - ringPos.current.y) * 0.12
       if (ringRef.current) {
@@ -93,7 +89,6 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Dot — centered via translate(-50%,-50%), position set by left/top in RAF */}
       <div
         ref={dotRef}
         className="pointer-events-none fixed z-[9999]"
@@ -110,7 +105,6 @@ export default function CustomCursor() {
             'width 150ms ease, height 150ms ease, border-radius 150ms ease, opacity 150ms ease, transform 100ms ease',
         }}
       />
-      {/* Ring — same centering approach */}
       <div
         ref={ringRef}
         className="pointer-events-none fixed z-[9998]"

@@ -11,8 +11,8 @@ export function TechTag({ name, active = false }: TechTagProps) {
       className={cn(
         'inline-block rounded-full border px-3 py-1 text-sm transition-colors duration-200',
         active
-          ? 'border-[var(--brand)] bg-[var(--brand)] text-white'
-          : 'border-border text-[var(--foreground-secondary)] hover:border-[var(--brand)] hover:text-[var(--brand)]'
+          ? 'border-brand bg-brand text-white'
+          : 'border-border text-foreground-secondary hover:border-brand hover:text-brand'
       )}
     >
       {name}

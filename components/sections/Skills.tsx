@@ -54,8 +54,8 @@ const SKILL_GROUPS: SkillGroup[] = [
 ]
 
 const FAMILIARITY_DOT: Record<Familiarity, string> = {
-  daily: 'bg-[var(--brand)]',
-  regular: 'bg-[var(--brand)]/50',
+  daily: 'bg-brand',
+  regular: 'bg-brand/50',
   occasional: 'bg-border',
 }
 
@@ -89,7 +89,7 @@ function SkillGroupCard({ group }: { group: SkillGroup }) {
 
   return (
     <div ref={ref} className="flex flex-col gap-4">
-      <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--foreground-secondary)]">
+      <h3 className="text-xs font-semibold uppercase tracking-widest text-foreground-secondary">
         {group.category}
       </h3>
       <div className="flex flex-col gap-2">
@@ -106,7 +106,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+      <div className="mx-auto max-w-300 px-4 sm:px-6">
         <SectionHeading title={t('heading')} subtitle={t('subtitle')} />
         <div className="grid gap-12 sm:grid-cols-3">
           {SKILL_GROUPS.map(group => (

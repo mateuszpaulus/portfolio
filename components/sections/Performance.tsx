@@ -10,11 +10,11 @@ import data from '@/content/performance.json'
 function MetricCard({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-5">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--brand)]/10 text-[var(--brand)]">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand">
         {icon}
       </div>
       <div>
-        <p className="text-xs text-[var(--foreground-secondary)]">{label}</p>
+        <p className="text-xs text-foreground-secondary">{label}</p>
         <p className="text-lg font-bold text-foreground">{value}</p>
       </div>
     </div>
@@ -23,7 +23,7 @@ function MetricCard({ icon, label, value }: { icon: React.ReactNode; label: stri
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-[var(--foreground-secondary)]">
+    <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-foreground-secondary">
       {children}
     </p>
   )
@@ -34,7 +34,7 @@ export default function Performance() {
 
   return (
     <section id="performance" className="py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+      <div className="mx-auto max-w-300 px-4 sm:px-6">
         <SectionHeading title={t('heading')} subtitle={t('subtitle')} />
 
         {/* Lighthouse scores */}
@@ -87,7 +87,7 @@ export default function Performance() {
           />
         </div>
 
-        <p className="mt-8 text-center text-sm text-[var(--foreground-secondary)]">
+        <p className="mt-8 text-center text-sm text-foreground-secondary">
           Results measured in production. Updated on every deploy.
         </p>
       </div>

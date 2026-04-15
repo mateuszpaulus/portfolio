@@ -41,7 +41,7 @@ function DPadButton({
       className={cn(
         'flex h-14 w-14 items-center justify-center rounded-xl border-2 text-xl font-bold transition-all duration-150 active:scale-95',
         isActive
-          ? 'scale-95 border-[var(--brand)] bg-[var(--brand)]/10 text-[var(--brand)]'
+          ? 'scale-95 border-brand bg-brand/10 text-brand'
           : 'border-border bg-background text-foreground',
         className
       )}
@@ -67,7 +67,7 @@ function ActionButton({
       className={cn(
         'flex h-14 w-14 items-center justify-center rounded-full border-2 text-sm font-bold uppercase transition-all duration-150 active:scale-95',
         isActive
-          ? 'scale-95 border-[var(--brand)] bg-[var(--brand)] text-white'
+          ? 'scale-95 border-brand bg-brand text-white'
           : 'border-border bg-background text-foreground'
       )}
     >
@@ -179,18 +179,15 @@ export default function EasterEggHint({ progress, addKey, wrongKey, total }: Eas
         >
           <span className="mb-4 block text-3xl">🎮</span>
           <h2 className="mb-2 text-xl font-semibold text-foreground">{t('hint_heading')}</h2>
-          <p className="mb-8 text-sm text-[var(--foreground-secondary)]">
+          <p className="mb-8 text-sm text-foreground-secondary">
             {isDesktop ? t('hint_desktop') : t('hint_mobile')}
           </p>
         </motion.div>
 
-        {/* Desktop: key visualization */}
         {isDesktop && <DesktopKeyDisplay progress={progress} wrongKey={wrongKey} />}
 
-        {/* Mobile: D-pad + sequence */}
         {!isDesktop && (
           <div className="space-y-8">
-            {/* D-pad */}
             <div className="flex flex-col items-center gap-1">
               <DPadButton keyName="ArrowUp" lastPressed={lastPressed} onPress={handleButtonPress} />
               <div className="flex gap-1">
@@ -203,15 +200,13 @@ export default function EasterEggHint({ progress, addKey, wrongKey, total }: Eas
               <DPadButton keyName="ArrowDown" lastPressed={lastPressed} onPress={handleButtonPress} />
             </div>
 
-            {/* A / B action buttons */}
             <div className="flex justify-center gap-4">
               <ActionButton keyName="b" lastPressed={lastPressed} onPress={handleButtonPress} />
               <ActionButton keyName="a" lastPressed={lastPressed} onPress={handleButtonPress} />
             </div>
 
-            {/* Sequence indicator */}
             <div>
-              <p className="mb-3 text-xs uppercase tracking-wider text-[var(--foreground-secondary)]">
+              <p className="mb-3 text-xs uppercase tracking-wider text-foreground-secondary">
                 {t('sequence_label')}
               </p>
               <MobileSequenceDisplay progress={progress} wrongKey={wrongKey} />
@@ -219,13 +214,11 @@ export default function EasterEggHint({ progress, addKey, wrongKey, total }: Eas
           </div>
         )}
 
-        {/* Progress dots */}
         <div className="mt-8">
           <ProgressDots progress={progress} wrongKey={wrongKey} total={total} />
         </div>
 
-        {/* Status text */}
-        <p className="mt-4 text-xs text-[var(--foreground-secondary)]">
+        <p className="mt-4 text-xs text-foreground-secondary">
           {wrongKey ? (
             <span className="text-red-400">{t('wrong')}</span>
           ) : progress.length === 0 ? (

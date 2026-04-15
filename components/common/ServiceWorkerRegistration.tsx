@@ -34,7 +34,6 @@ export default function ServiceWorkerRegistration() {
       }
     }
 
-    // Safari is sensitive to SW registration timing — wait for load
     if (document.readyState === 'complete') {
       registerSW()
     } else {
